@@ -1,7 +1,7 @@
 # WELCOME TO MY WEBSITE
 
 
-A short introduction for the top of your main page
+A short introduction for the top of your main page. Yo. 
 
 ## a heading
 More content you want on your page
