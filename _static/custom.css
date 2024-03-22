@@ -128,24 +128,6 @@ div.timeline div.entry.right::after {
 } */
 
 
-.slide {
-    display: none;
-
-    animation-name: fade;
-    animation-duration: 1.5s;
-}
-
-img {
-    vertical-align: middle;
-}
-
-/* Slideshow container */
-.slideshow-container {
-    /* max-width: 1000px; */
-    position: relative;
-    margin: auto;
-}
-
 /* Caption text */
 .text {
     color: #f2f2f2;
@@ -181,25 +163,6 @@ img {
     background-color: #717171;
 }
 
-H1.pechakucha {
-    display:none;
-}
-
-/* Fading animation */
-.fade {
-    animation-name: fade;
-    animation-duration: 1.5s;
-}
-
-@keyframes fade {
-    from {
-        opacity: .4
-    }
-
-    to {
-        opacity: 1
-    }
-}
 
 /* On smaller screens, decrease text size */
 @media only screen and (max-width: 300px) {
