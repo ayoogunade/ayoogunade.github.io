@@ -1,0 +1,42 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "Set your Profile picture",
+  "steps": [
+    {
+      "title": "Add an image",
+      "directory": "_static/img",
+      "description": "Upload images to this folder to include them in your website.  In the codespace, you can right click to get to the download option. \n\nNext you have a choice, either manually or set it up to use your info.yml differently. We will go through what both look like in this tour. \n\nThis step *does* require you to edit some HTML code, but not from memory, the tour will give you the example. ",
+      "line": 1
+    },
+    {
+      "title": "Manually set the path",
+      "file": "_templates/hello.html",
+      "description": " First we'll see what the manual looks like. \n\n Edit this line to change to an image of yourself. If your image name is `me.jpg` your new line would looke like`\n\n```\n<img src=\"_static/img/me.jpg\"\n```\n\n",
+      "line": 3
+    },
+    {
+      "title": "Manually set alt text",
+      "file": "_templates/hello.html",
+      "description": "Add a description for screen readers (used by low vision people):\n\n```\n alt=\"a picture of me, wearing a color and .../>\n```\n\n",
+      "line": 4
+    },
+    {
+      "title": "Set up with info.yml",
+      "file": "_templates/hello.html",
+      "description": "Alternatively, you can modify this so that you can set the image in the `info.yml` file, right now, it sets only *part* of the file name, but we can change it to control the whole thing. \n\nThis verison is a bit more work today, but means that in the future you can edit the yml file only when you want to change the image.",
+      "line": 4
+    },
+    {
+      "title": "Set up with info.yml",
+      "file": "_templates/hello.html",
+      "description": " \n\n\nTo do this, start by replacing the current lines 3 and 4 with the following: \n\n```\n<img src=\"_static/img/{{ profile }}\"\n  alt=\"{{ profile_alt }}/>\n```\n",
+      "line": 4
+    },
+    {
+      "title": "Set in info.yml",
+      "file": "info.yml",
+      "description": "Now  two new keys here: \n\n```\nprofile: image_file_name.jpg\nprofile_alt: a description fo the image for screen readers\n``` \n\nand edit the values. \n\nthe part after the `:` is the value, that you can make whatever you want; the part before has to match what's in the hello.html",
+      "line": 40
+    }
+  ]
+}

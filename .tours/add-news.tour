@@ -1,0 +1,60 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "Add a blog (aka news)",
+  "steps": [
+    {
+      "title": "add the post list to the mainpage",
+      "file": "index.md",
+      "description": "The following is the \"directive\" that makes the post list, the `toctree` we made for adding pages is also a directive. \n\nThis will show your most recent 5 posts, you can change the number to what you would like. \n\n```markdown\n:::{postlist} 5\n:date: \"%Y-%m-%d\"\n:format: \"{date} : {title}\"\n:excerpts:\n:::\n````",
+      "line": 40,
+      "selection": {
+        "start": {
+          "line": 16,
+          "character": 1
+        },
+        "end": {
+          "line": 16,
+          "character": 15
+        }
+      }
+    },
+    {
+      "title": "create a news page",
+      "file": "index.md",
+      "description": "add a news.md file by using the page + icon in the file panel to the left",
+      "line": 40,
+      "selection": {
+        "start": {
+          "line": 16,
+          "character": 1
+        },
+        "end": {
+          "line": 16,
+          "character": 15
+        }
+      }
+    },
+    {
+      "title": "create a news page",
+      "file": "index.md",
+      "description": "add news.md to the toctree and uncomment it if you have not already",
+      "line": 40,
+      "selection": {
+        "start": {
+          "line": 16,
+          "character": 1
+        },
+        "end": {
+          "line": 16,
+          "character": 15
+        }
+      }
+    },
+    {
+      "title": "create a post",
+      "file": "_resources/news-example.md",
+      "description": "use this example to add a file to your news folder",
+      "line": 1
+    }
+  ]
+}

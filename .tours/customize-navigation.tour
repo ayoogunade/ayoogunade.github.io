@@ -1,0 +1,42 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "customize navigation",
+  "steps": [
+    {
+      "title": "Configuring in python",
+      "file": "conf.py",
+      "description": "this file is a Python file, so lines that start with `#` are comments. There are comments in there to help understand the different blocks. ",
+      "line": 8
+    },
+    {
+      "title": "Theme",
+      "file": "conf.py",
+      "description": "Sphinx, the site builder uses themes to control the overall look and feel. \n\nYou can learn more about this theme from the [pydata theme docs](https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html). \n\nAlternativlely, you can try a [different theme](https://sphinx-themes.org/). You will need to install that them, and you should add it to the `requirements.txt` file as well. ",
+      "line": 11
+    },
+    {
+      "title": "Requirements",
+      "file": "requirements.txt",
+      "description": "this is where the current theme is, you can add or replace this one if you choose to change. ",
+      "line": 5
+    },
+    {
+      "title": "Theme options",
+      "file": "conf.py",
+      "description": "this variable controls most of the options, including the sidebars. \n\nYou can learn [about the structure](https://pydata-sphinx-theme.readthedocs.io/en/stable/user_guide/layout.html#overview-of-theme-layout) and then add whatever options you like here. ",
+      "line": 54
+    },
+    {
+      "title": "Sidebars",
+      "file": "conf.py",
+      "description": "this variable controls the left sidebar. \n\nYou can use the [built-in options](https://pydata-sphinx-theme.readthedocs.io/en/stable/user_guide/layout.html#built-in-components-to-insert-into-sections) or add more files, like the current `hello.html`",
+      "line": 75
+    },
+    {
+      "title": "Custom sidebar",
+      "file": "_templates/hello.html",
+      "description": "this syntax `{{ varname }}` , the variable name inside of double curly brackets with a space allows content from `info.yml` to be inserted.  You can also customize or edit this file. \n\nOr you can add another to this folder. ",
+      "line": 9
+    }
+  ]
+}

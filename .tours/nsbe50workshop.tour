@@ -1,0 +1,42 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "NSBE50workshop",
+  "steps": [
+    {
+      "title": "Start",
+      "file": "README.md",
+      "description": "The codespace is now set up to do these steps for you automatically, but if you want to work offline later, you will need to run the following commands. ",
+      "line": 16
+    },
+    {
+      "title": "Preview",
+      "file": "README.md",
+      "description": "once your preview is ready, it is time to look at it then you can begin to customize it. ",
+      "line": 34
+    },
+    {
+      "title": "Set your region",
+      "file": "info.yml",
+      "description": "let's start customization by changing the region number to your region. Then see what it does, by looking at the preview site. ",
+      "line": 6
+    },
+    {
+      "title": "About you",
+      "file": "info.yml",
+      "description": "Now update the rest of this info about yourself, as you would like",
+      "line": 1
+    },
+    {
+      "title": "Main page",
+      "file": "index.md",
+      "description": "You can set the title of the main page of your site here",
+      "line": 1
+    },
+    {
+      "title": "Metadata",
+      "file": "conf.py",
+      "description": "Setting these up will control the metadata of your site and the page title. ",
+      "line": 3
+    }
+  ]
+}
