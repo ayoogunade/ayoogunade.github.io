@@ -6,8 +6,15 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>All Posts &#8212; Site Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="Project Grid" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="projects/" />
+<meta property="og:site_name" content="Site Title" />
+<meta property="og:description" content="Title body of a plain card footer Header card Title 2 body 2 footer2 Header card An image with text NSBE 50 host region NSBE icon We’re in R3. This card has no footer Header image body below image ..." />
+<meta name="description" content="Title body of a plain card footer Header card Title 2 body 2 footer2 Header card An image with text NSBE 50 host region NSBE icon We’re in R3. This card has no footer Header image body below image ..." />
+
+    <title>Project Grid &#8212; Site Title</title>
   
   
   
@@ -41,20 +48,13 @@
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/design-tabs.js?v=36754332"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'news';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'projects';</script>
     <link rel="author" title="About these documents" href="../about/" />
     <link rel="index" title="Index" href="../genindex/" />
     <link rel="search" title="Search" href="../search/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-
-<link
-  rel="alternate"
-  type="application/atom+xml"
-  href="../news/atom.xml"
-  title=""
-/>
 
 
 
@@ -197,6 +197,10 @@ document.write(`
   
 
   
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
 </div>
 
     </header>
@@ -311,7 +315,7 @@ document.write(`
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
-    <li class="breadcrumb-item active" aria-current="page">All Posts</li>
+    <li class="breadcrumb-item active" aria-current="page">Project Grid</li>
   </ul>
 </nav>
 </div>
@@ -328,16 +332,86 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
+<section class="tex2jax_ignore mathjax_ignore" id="project-grid">
+<h1>Project Grid<a class="headerlink" href="#project-grid" title="Link to this heading">#</a></h1>
+<!-- this creates a grid with 3 columns -->
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-3 sd-row-cols-xs-3 sd-row-cols-sm-3 sd-row-cols-md-3 sd-row-cols-lg-3 docutils">
+<!-- these cards create differnt types, a tip is to look at how this renders
+then decide how you want to edit -->
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Title</div>
+<p class="sd-card-text">body of a plain card</p>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text">footer</p>
+</div>
+</div>
+</div>
+<!-- the ::: starts and ends the card -->
+<!-- the +++ separates body from footer -->
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-header docutils">
+<p class="sd-card-text">Header card</p>
+</div>
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Title 2</div>
+<p class="sd-card-text">body 2</p>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text">footer2</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-header docutils">
+<p class="sd-card-text">Header card</p>
+</div>
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+An image with text</div>
+<p class="sd-card-text"><img alt="NSBE 50 host region NSBE icon" src="../_images/nsbe_profile_3.png" />
+We’re in R3. This card has no footer</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<img alt="" class="sd-card-img-top" src="../_images/nsbe_profile_3.png" />
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Header image</div>
+<p class="sd-card-text">body below image</p>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text">footer2</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 4 : started the grid, so 4 closes it -->
+<!--  Docs:
+https://sphinx-design.readthedocs.io/en/latest/grids.html#placing-a-card-in-a-grid -->
+<!-- Example card -->
+<!-- 
+:::{grid-item-card} Header image
+:img-top: _static/img/nsbe_profile_3.png
 
-<div class="section ablog__collection">
-  <h1>
-    
-      All
-      
-    Posts
-    
-  </h1>
-  
+body below image
++++
+footer2
+::: 
+-->
+</section>
+
+<div class="section ablog__blog_comments">
   
   
 </div>
@@ -358,7 +432,19 @@ document.write(`
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"></div>
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../_sources/projects.md.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
               
             
           </div>
