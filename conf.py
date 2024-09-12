@@ -1,8 +1,8 @@
 # -- Project information -----------------------------------------------------
 
-project = 'Site Title'
-copyright = '2024, Your name'
-author = 'Your Name'
+project = 'Ayo Ogunade'
+copyright = '2024, Ayo Ogunade'
+author = 'Ayo Ogunade'
 
 # ----------------------------------------------------------------------------
 #            Below here does not *need* to be edited for the workshop
@@ -52,10 +52,23 @@ with open ('info.yml','r') as f:
 
 
 html_theme_options = {
-#   "github_url": "https://github.com/username/",
+   "github_url": "https://github.com/ayoogunade/",
      "header_links_before_dropdown": 8,
   "search_bar_text": "Search this site...",
-#   "navbar_end": ["search-field.html"],
+   "navbar_end": ["search-field.html"],
+   "icon links":[
+       {
+            "name": "GitHub",
+            "url": "https://github.com/ayoogunade/",
+            "icon": "fa-brands fa-github",
+        },
+        
+        #{
+         #   "name": "Blog RSS feed",
+          #  "url": "https://chrisholdgraf.com/blog/atom.xml",
+           # "icon": "fa-solid fa-rss",
+       # },*#
+   ]
 }
 
 # html_favicon = "_static/favicon.ico"
