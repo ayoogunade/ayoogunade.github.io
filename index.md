@@ -13,7 +13,7 @@ Projects I've worked on 🔧
 ::::
 
 ## Learn more about me
-More content you want on your page. Your SOAPY meaty claws!!!
+More content you want on your page. Your SOAPY VOLUME 2 meaty claws!!!
 
 
 
