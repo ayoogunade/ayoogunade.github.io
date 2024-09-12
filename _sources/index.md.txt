@@ -3,10 +3,6 @@ As a Software-driven student, I am eagerly seeking a Software Development intern
  
 ::::{grid}
 :::{grid-item-card}
-:link: about
-About me ℹ️
-:::
-:::{grid-item-card}
 :link: projects
 Projects I've worked on 🔧
 :::
