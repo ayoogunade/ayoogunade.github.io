@@ -34,9 +34,6 @@ Details coming soon about an exciting new project!
 :::
 ::::
 
-## Learn more about me
-Feel free to dive into my personal journey and the projects I'm working on.
-
 ## Socials
 - [GitHub](https://github.com/ayoogunade/)
 - [LinkedIn](https://www.linkedin.com/in/ayoogunade/)
