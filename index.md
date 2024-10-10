@@ -9,9 +9,7 @@ Projects I've worked on 🔧
 ::::
 
 ## Learn more about me
-More content you want on your page. Your SOAPY VOLUME 2 meaty claws!!!
-
-
+More content you want on your page.
 
 <!-- this line is a comment. use the following to make a menu when you add more pages by uncommenting them -->
 
