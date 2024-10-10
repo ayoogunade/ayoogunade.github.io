@@ -9,7 +9,7 @@ Check out some of the projects I've worked on! These projects reflect my interes
 
 A dynamic platform for reviewing and discussing music. Users can rate songs and albums, leave comments, and explore music genres.
 +++
-[View Project](projects/music-review)
+[View Project](ayotalksmusic.com)
 :::
 
 <!-- Card for Justin Bieber Fanpage -->
