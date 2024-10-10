@@ -71,7 +71,7 @@ html_theme_options = {
    ]
 }
 
-# html_favicon = "_static/favicon.ico"
+html_favicon = "_static/Headshot(favicon)"
 #  change this to change the site title
 html_title = project
 
