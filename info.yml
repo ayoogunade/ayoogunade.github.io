@@ -1,8 +1,12 @@
 name: Ayo Ogunade
-keywords: "Java | Python | C | Software Development | AI"
+keywords: "Java | Python | C"
 major: Computer Science
 gradyear: 2027
 university: University of Saskatchewan
 region: 5
-tagline: "Building innovative software to empower students and positively impact communities."
+tagline: "Building innovative software to empower students and positively impact communities"
 default_mode: dark
+
+# Add profile picture and alt text for accessibility
+profile: "Headshot.jpeg"         # Image file name (replace with your image)
+profile_alt: "Ayo Ogunade's profile picture"  # Alt text for screen readers

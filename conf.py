@@ -21,7 +21,7 @@ extensions = [
     "myst_nb",
     "ablog",
     'sphinx.ext.intersphinx',
-    "sphinx_design",
+    "spxhinx_design",
     "sphinxext.opengraph",
 ]
 
@@ -52,24 +52,37 @@ with open ('info.yml','r') as f:
 
 
 html_theme_options = {
-   "github_url": "https://github.com/ayoogunade/",
-     "header_links_before_dropdown": 8,
-  "search_bar_text": "Search this site...",
-   "navbar_end": ["search-field.html"],
-   "icon links":[
-       {
+    "github_url": "https://github.com/ayoogunade/",
+    "linkedin_url": "https://www.linkedin.com/in/ayoogunade/",
+    "website_url": "https://ayoogunade.github.io/",  # Add your website link here
+    "header_links_before_dropdown": 8,
+    "search_bar_text": "Search this site...",
+    "navbar_end": ["search-field.html"],
+    "icon_links": [
+        {
             "name": "GitHub",
             "url": "https://github.com/ayoogunade/",
             "icon": "fa-brands fa-github",
         },
-        
-        #{
-         #   "name": "Blog RSS feed",
-          #  "url": "https://chrisholdgraf.com/blog/atom.xml",
-           # "icon": "fa-solid fa-rss",
-       # },*#
-   ]
+        {
+            "name": "LinkedIn",
+            "url": "https://www.linkedin.com/in/ayoogunade/",
+            "icon": "fa-brands fa-linkedin",
+        },
+        {
+            "name": "Website",
+            "url": "https://ayoogunade.github.io/",
+            "icon": "fa-solid fa-globe",
+        },
+    ],
+    "navbar_links": [
+        {"name": "Home", "url": "/#home"},
+        {"name": "Projects", "url": "/#projects"},
+        {"name": "Socials", "url": "/#socials"},
+        {"name": "Blog", "url": "/#blog"},
+    ]
 }
+
 
 html_favicon = "_static/Headshot(favicon)"
 #  change this to change the site title
