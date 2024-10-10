@@ -22,4 +22,3 @@ Feel free to connect with me on:
 ## {#blog} Blog
 
 Coming soon! Stay tuned for my insights on software development, machine learning, and the latest trends in tech.
-
