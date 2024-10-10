@@ -1,17 +1,24 @@
 # Ayo Ogunade
-As a Software-driven student, I am eagerly seeking a Software Development internship for the summer of 2025 to leverage my expertise in Java, Python, C, and Excel as well as building a Software Developing foundation on a higher level. My aspirations revolve around a career in Software Development, with a particular focus on crafting educational apps tailored for secondary and college-level content, aimed at making learning accessible to students worldwide.
- 
+
+👋 Hi, I'm Ayo Ogunade, a second-year Computer Science student passionate about Software Development, AI, and Machine Learning. I'm currently seeking a Software Development internship for summer 2025, where I can apply my knowledge in Java, Python, and C to create impactful solutions.
+
+I'm particularly interested in building **educational apps** to make learning accessible for students around the world.
+
 ::::{grid}
-:::{grid-item-card}
+:::{grid-item-card} 
 :link: projects
-Projects I've worked on 🔧
+## Featured Projects
+- 🎵 [Music Review Website](projects/music-review)
+- 👤 [Justin Bieber Fanpage](projects/justin-bieber)
+:::
+:::{grid-item-card}
+:link: research
+
 :::
 ::::
 
 ## Learn more about me
-More content you want on your page.
-
-<!-- this line is a comment. use the following to make a menu when you add more pages by uncommenting them -->
+Feel free to dive into my personal journey and the projects I'm working on.
 
 ```{toctree}
 :maxdepth: 2
@@ -20,6 +27,3 @@ More content you want on your page.
 About
 Projects
 Research
-```   
-
-

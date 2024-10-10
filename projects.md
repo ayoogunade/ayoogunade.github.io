@@ -1,59 +1,33 @@
-# Project Grid
+# My Projects
 
-<!-- this creates a grid with 3 columns -->
-::::{grid} 3
+Check out some of the projects I've worked on! These projects reflect my interests in software development, web design, and building engaging user experiences.
 
-<!-- these cards create differnt types, a tip is to look at how this renders
-then decide how you want to edit -->
-:::{grid-item-card} Title
+::::{grid} 2
+<!-- Card for Music Review Website -->
+:::{grid-item-card} 🎵 Music Review Website
+:img-top: _static/img/music_review_screenshot.png
 
-body of a plain card
+A dynamic platform for reviewing and discussing music. Users can rate songs and albums, leave comments, and explore music genres.
 +++
-footer
+[View Project](projects/music-review)
 :::
-<!-- the ::: starts and ends the card -->
-<!-- the +++ separates body from footer -->
 
-:::{grid-item-card} Title 2
-Header card
-^^^
-body 2
+<!-- Card for Justin Bieber Fanpage -->
+:::{grid-item-card} 👤 Justin Bieber Fanpage
+:img-top: _static/img/justin_bieber_screenshot.png
+
+A fanpage dedicated to Justin Bieber, featuring his biography, discography, an interactive timeline, and a media gallery for fans.
 +++
-footer2
+[View Project](projects/justin-bieber)
 :::
 
+<!-- Card for Future Projects (placeholder) -->
+:::{grid-item-card} Future Project
+:img-top: _static/img/future_project_placeholder.png
 
-:::{grid-item-card} An image with text
-Header card
-^^^
-![NSBE 50 host region NSBE icon](_static/img/nsbe_profile_3.png)
-We're in R3. This card has no footer
-
-:::
-
-:::{grid-item-card} Header image
-:img-top: _static/img/nsbe_profile_3.png
-
-body below image
+Details coming soon about an exciting new project!
 +++
-footer2
+[Learn More](#)
 :::
-
-
-
 ::::
-<!-- 4 : started the grid, so 4 closes it -->
-<!--  Docs:
-https://sphinx-design.readthedocs.io/en/latest/grids.html#placing-a-card-in-a-grid -->
 
-<!-- Example card -->
-
-<!-- 
-:::{grid-item-card} Header image
-:img-top: _static/img/nsbe_profile_3.png
-
-body below image
-+++
-footer2
-::: 
--->
