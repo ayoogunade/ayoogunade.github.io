@@ -1,24 +1,37 @@
 # Ayo Ogunade
 
-# {#home} 👋 Hi, I'm Ayo Ogunade, a Computer Science student at the University of Saskatchewan.
+👋 Hi, I'm Ayo Ogunade, a second-year Computer Science student passionate about Software Development, AI, and Machine Learning. I'm currently seeking a Software Development internship for summer 2025, where I can apply my knowledge in Java, Python, and C to create impactful solutions.
 
-I specialize in software development and AI integration, aiming to build innovative software that empowers students and positively impacts communities.
+I'm particularly interested in building **educational apps** to make learning accessible for students around the world.
 
-## {#projects} Featured Projects
+::::{grid}
+:::{grid-item-card} 
+:link: projects
+## Featured Projects
+- 🎵 [Music Review Website](projects/music-review)
+- 👤 [Justin Bieber Fanpage](projects/justin-bieber)
+:::
+:::{grid-item-card}
+:link: research
 
-### Music Review Website
-This project allows users to review their favorite music albums and songs. Built with HTML, CSS, and JavaScript.
+:::
+::::
 
-### Justin Bieber Fanpage
-A fanpage dedicated to Justin Bieber, showcasing his career, music, and latest news. Built with HTML and CSS.
+## Learn more about me
+Feel free to dive into my personal journey and the projects I'm working on.
 
-## {#socials} Connect with Me
-Feel free to connect with me on:
-
+## Socials
 - [GitHub](https://github.com/ayoogunade/)
 - [LinkedIn](https://www.linkedin.com/in/ayoogunade/)
-- [My Website](https://ayoogunade.github.io/)
+- [Website](https://ayoogunade.github.io/)
 
-## {#blog} Blog
-
+## Blog
 Coming soon! Stay tuned for my insights on software development, machine learning, and the latest trends in tech.
+
+```{toctree}
+:maxdepth: 2
+:hidden:
+
+About
+Projects
+Research
