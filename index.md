@@ -12,7 +12,7 @@ I'm particularly interested in building **educational apps** to make learning ac
 
 A dynamic platform for reviewing and discussing music. Users can rate songs and albums, leave comments, and explore music genres.
 +++
-[View Project](ayotalksmusic.com)
+[View Project](https://ayotalksmusic.com/)
 :::
 
 <!-- Card for Justin Bieber Fanpage -->
