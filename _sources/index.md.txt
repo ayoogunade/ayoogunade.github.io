@@ -1,8 +1,8 @@
 # Ayo Ogunade
 
-👋 Hi, I'm Ayo Ogunade, a second-year Computer Science student passionate about Software Development, AI, and Machine Learning. I'm currently seeking a Software Development internship for summer 2025, where I can apply my knowledge in Java, Python, and C to create impactful solutions.
+👋 Hi, I'm Ayo Ogunade, a second-year Computer Science student passionate about Software Development, AI, and Machine Learning. I'm currently seeking a Software Development internship for summer 2025, where I can apply my knowledge in Java, Python, and C to create impactful solutions. I'm particularly interested in building **educational apps** to make learning accessible for students around the world.
 
-I'm particularly interested in building **educational apps** to make learning accessible for students around the world.
+Outside of my studies and work, I actively engage with organizations like the National Society of Black Engineers (NSBE) and Sankofatech's Achievers in Technology (AIT) program.
 
 # Featured Projects
 ::::{grid} 2
@@ -20,6 +20,7 @@ A dynamic platform for reviewing and discussing music. Users can rate songs and 
 :img-top: _static/img/justin_bieber_screenshot.png
 
 A fanpage dedicated to Justin Bieber, featuring his biography, discography, an interactive timeline, and a media gallery for fans.
+**HTML and CSS
 +++
 [View Project](projects/justin-bieber)
 :::
