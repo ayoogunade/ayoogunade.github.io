@@ -1,4 +1,4 @@
-# Ayo Ogunade
+# About Me
 
 👋 Hi, I'm Ayo Ogunade, a second-year Computer Science student passionate about Software Development, AI, and Machine Learning. I'm currently seeking a Software Development internship for summer 2025, where I can apply my knowledge in Java, Python, and C to create impactful solutions. I'm particularly interested in building **educational apps** to make learning accessible for students around the world.
 
@@ -6,25 +6,6 @@ Outside of my studies and work, I actively engage with organizations like the Na
 
 # Featured Projects
 ::::{grid} 2
-<!-- Card for Music Review Website -->
-:::{grid-item-card} 🎵 Music Review Website
-:img-top: _static/img/music_review_screenshot.png
-
-A dynamic platform for reviewing and discussing music. Users can rate songs and albums, leave comments, and explore music genres.
-+++
-[View Project](https://ayotalksmusic.com/)
-:::
-
-<!-- Card for Trip-path Animator -->
-:::{grid-item-card} 🗺️ Trip-path Animator
-:img-top: _static/img/path_animator_placeholder.png
-
-A GPS path animation tool with customizable GUI that plots, animates, and visualizes routes from CSV data. Features color-coded speed indicators and interactive controls.
-**Java • JMapViewer • OpenStreetMap**
-+++
-[View Project](projects/path-animator)
-:::
-
 <!-- Card for Collaborative Text Editor -->
 :::{grid-item-card} 📝 Collaborative Text Editor
 :img-top: _static/img/collab_editor_placeholder.png
@@ -33,6 +14,23 @@ A real-time collaborative text editor enabling multiple users to simultaneously 
 **React • Node.js • WebSocket • Express**
 +++
 [View Project](https://ayoogunade.github.io/CollabTextEditor/)
+:::
+<!-- Card for Trip-path Animator -->
+:::{grid-item-card} 🗺️ Trip-path Animator
+:img-top: _static/img/path_animator_placeholder.png
+
+A GPS path animation tool with customizable GUI that plots, animates, and visualizes routes from CSV data. Features color-coded speed indicators and interactive controls.
+**Java • JMapViewer • OpenStreetMap**
++++
+[View Project](https://github.com/ayoogunade/PathAnimator)
+:::
+<!-- Card for Music Review Website -->
+:::{grid-item-card} 🎵 Music Review Website
+:img-top: _static/img/music_review_screenshot.png
+
+A dynamic platform for reviewing and discussing music. Users can rate songs and albums, leave comments, and explore music genres.
++++
+[View Project](https://ayotalksmusic.com/)
 :::
 
 <!-- Card for Justin Bieber Fanpage -->
