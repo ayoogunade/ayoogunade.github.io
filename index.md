@@ -6,11 +6,19 @@ Outside of my studies and work, I actively engage with organizations like the Na
 
 # Featured Projects
 ::::{grid} 2
+<!-- Card for Amazon Clone -->
+:::{grid-item-card} 📝 Amazon Clone
+:img-top: _static/img/collab_editor_placeholder.png
+Currently developing a full-stack e-commerce website that mimics Amazon’s product listing and ordering system, deepening expertise in RESTful API development. The frontend is built with React, designed for future deployment on GitHub Pages, while the backend leverages Python and Flask for efficient server-side processing.
+**React •Python • Flask • MongoDB**
++++
+[View Project](https://ayoogunade.github.io/CollabTextEditor/)
+:::
 <!-- Card for Collaborative Text Editor -->
 :::{grid-item-card} 📝 Collaborative Text Editor
 :img-top: _static/img/collab_editor_placeholder.png
 
-A real-time collaborative text editor enabling multiple users to simultaneously edit and view document changes across different browser sessions.
+A real-time collaborative text editor enabling multiple users to simultaneously edit and view document changes across different browser sessions.  
 **React • Node.js • WebSocket • Express**
 +++
 [View Project](https://ayoogunade.github.io/CollabTextEditor/)
@@ -19,7 +27,7 @@ A real-time collaborative text editor enabling multiple users to simultaneously 
 :::{grid-item-card} 🗺️ Trip-path Animator
 :img-top: _static/img/path_animator_placeholder.png
 
-A GPS path animation tool with customizable GUI that plots, animates, and visualizes routes from CSV data. Features color-coded speed indicators and interactive controls.
+A GPS path animation tool with customizable GUI that plots, animates, and visualizes routes from CSV data. Features color-coded speed indicators and interactive controls.  
 **Java • JMapViewer • OpenStreetMap**
 +++
 [View Project](https://github.com/ayoogunade/PathAnimator)
@@ -37,7 +45,7 @@ A dynamic platform for reviewing and discussing music. Users can rate songs and 
 :::{grid-item-card} 👤 Justin Bieber Fanpage
 :img-top: _static/img/justin_bieber_screenshot.png
 
-A fanpage dedicated to Justin Bieber, featuring his biography, discography, an interactive timeline, and a media gallery for fans.
+A fanpage dedicated to Justin Bieber, featuring his biography, discography, an interactive timeline, and a media gallery for fans.    
 **HTML and CSS**
 +++
 [View Project](projects/justin-bieber)
