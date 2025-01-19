@@ -9,7 +9,7 @@ Outside of my studies and work, I actively engage with organizations like the Na
 <!-- Card for Amazon Clone -->
 :::{grid-item-card} 📝 Amazon Clone
 :img-top: _static/img/collab_editor_placeholder.png
-Currently developing a full-stack e-commerce website that mimics Amazon’s product listing and ordering system, deepening expertise in RESTful API development. The frontend is built with React, designed for future deployment on GitHub Pages, while the backend leverages Python and Flask for efficient server-side processing.
+Currently developing a full-stack e-commerce website that mimics Amazon’s product listing and ordering system, deepening expertise in RESTful API development.  
 **React •Python • Flask • MongoDB**
 +++
 [View Project](https://ayoogunade.github.io/CollabTextEditor/)
