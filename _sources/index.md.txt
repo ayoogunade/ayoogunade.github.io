@@ -12,8 +12,7 @@ Outside of my studies and work, I actively engage with organizations like the Na
 Currently developing a full-stack e-commerce website that mimics Amazon’s product listing and ordering system, deepening expertise in RESTful API development.  
 **React •Python • Flask • MongoDB**
 +++
-[View Project](https://ayoogunade.github.io/CollabTextEditor/)
-:::
+ :::
 <!-- Card for Collaborative Text Editor -->
 :::{grid-item-card} 📝 Collaborative Text Editor
 :img-top: _static/img/collab_editor_placeholder.png
