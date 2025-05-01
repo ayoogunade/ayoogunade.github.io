@@ -8,14 +8,14 @@ Outside of my studies and work, I actively engage with organizations like the Na
 ::::{grid} 2
 <!-- Card for Amazon Clone -->
 :::{grid-item-card} 📝 Amazon Clone
-:img-top: _static/img/collab_editor_placeholder.png
+<!-- :img-top: _static/img/collab_editor_placeholder.png -->
 Currently developing a full-stack e-commerce website that mimics Amazon’s product listing and ordering system, deepening expertise in RESTful API development.  
 **React •Python • Flask • MongoDB**
 +++
  :::
 <!-- Card for Collaborative Text Editor -->
 :::{grid-item-card} 📝 Collaborative Text Editor
-:img-top: _static/img/collab_editor_placeholder.png
+<!-- :img-top: _static/img/collab_editor_placeholder.png -->
 
 A real-time collaborative text editor enabling multiple users to simultaneously edit and view document changes across different browser sessions.  
 **React • Node.js • WebSocket • Express**
@@ -24,7 +24,7 @@ A real-time collaborative text editor enabling multiple users to simultaneously 
 :::
 <!-- Card for Trip-path Animator -->
 :::{grid-item-card} 🗺️ Trip-path Animator
-:img-top: _static/img/path_animator_placeholder.png
+<!-- :img-top: _static/img/path_animator_placeholder.png -->
 
 A GPS path animation tool with customizable GUI that plots, animates, and visualizes routes from CSV data. Features color-coded speed indicators and interactive controls.  
 **Java • JMapViewer • OpenStreetMap**
@@ -33,7 +33,7 @@ A GPS path animation tool with customizable GUI that plots, animates, and visual
 :::
 <!-- Card for Music Review Website -->
 :::{grid-item-card} 🎵 Music Review Website
-:img-top: _static/img/music_review_screenshot.png
+<!-- :img-top: _static/img/music_review_screenshot.png -->
 
 A dynamic platform for reviewing and discussing music. Users can rate songs and albums, leave comments, and explore music genres.
 +++
@@ -42,7 +42,7 @@ A dynamic platform for reviewing and discussing music. Users can rate songs and 
 
 <!-- Card for Justin Bieber Fanpage -->
 :::{grid-item-card} 👤 Justin Bieber Fanpage
-:img-top: _static/img/justin_bieber_screenshot.png
+<!-- :img-top: _static/img/justin_bieber_screenshot.png -->
 
 A fanpage dedicated to Justin Bieber, featuring his biography, discography, an interactive timeline, and a media gallery for fans.    
 **HTML and CSS**
