@@ -43,6 +43,19 @@
         .delay-300 { animation-delay: 0.3s; }
         .delay-400 { animation-delay: 0.4s; }
         .delay-500 { animation-delay: 0.5s; }
+        .filter-active {
+            background-color: #e0e7ff; /* indigo-100 */
+            color: #4338ca; /* indigo-700 */
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background: linear-gradient(to bottom, #6366f1, #8b5cf6);
+        }
     </style>
 </head>
 <body class="bg-gray-50 font-sans antialiased">
@@ -57,6 +70,7 @@
                     <a href="#home" class="text-gray-700 hover:text-indigo-600 transition">Home</a>
                     <a href="#about" class="text-gray-700 hover:text-indigo-600 transition">About</a>
                     <a href="#projects" class="text-gray-700 hover:text-indigo-600 transition">Projects</a>
+                    <a href="#experience" class="text-gray-700 hover:text-indigo-600 transition">Experience</a>
                     <a href="#skills" class="text-gray-700 hover:text-indigo-600 transition">Skills</a>
                     <a href="#contact" class="text-gray-700 hover:text-indigo-600 transition">Contact</a>
                 </div>
@@ -73,6 +87,7 @@
                 <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50">Home</a>
                 <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50">About</a>
                 <a href="#projects" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50">Projects</a>
+                <a href="#experience" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50">Experience</a>
                 <a href="#skills" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50">Skills</a>
                 <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50">Contact</a>
             </div>
@@ -90,7 +105,7 @@
                     <div class="flex space-x-4">
                         <a href="#projects" class="bg-white text-indigo-600 px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition">View My Work</a>
                         <a href="#contact" class="border-2 border-white text-white px-6 py-3 rounded-lg font-medium hover:bg-white hover:text-indigo-600 transition">Contact Me</a>
-                        <a href="/Ayo Ogunade August 2025 Resume - TECHNICAL.pdf" target="_blank" class="bg-indigo-700 text-white px-6 py-3 rounded-lg font-medium hover:bg-indigo-800 transition flex items-center"><i class="fas fa-file-alt mr-2"></i> View Resume</a>
+                        <a href="/Ayo Tech September 2025 Resume.pdf" target="_blank" class="bg-indigo-700 text-white px-6 py-3 rounded-lg font-medium hover:bg-indigo-800 transition flex items-center"><i class="fas fa-file-alt mr-2"></i> View Resume</a>
                     </div>
                 </div>
                 <div class="md:w-1/2 flex justify-center animate-fadeIn delay-200">
@@ -167,7 +182,7 @@
             <!-- Project Filter -->
             <div class="flex justify-center mb-12">
                 <div class="inline-flex rounded-md shadow-sm" role="group">
-                    <button type="button" class="filter-btn px-4 py-2 text-sm font-medium rounded-l-lg border border-gray-200 hover:bg-gray-100 focus:z-10 focus:bg-indigo-100" data-filter="all">
+                    <button type="button" class="filter-btn px-4 py-2 text-sm font-medium rounded-l-lg border border-gray-200 hover:bg-gray-100 focus:z-10 focus:bg-indigo-100 filter-active" data-filter="all">
                         All
                     </button>
                     <button type="button" class="filter-btn px-4 py-2 text-sm font-medium border-t border-b border-gray-200 hover:bg-gray-100 focus:z-10 focus:bg-indigo-100" data-filter="web">
@@ -187,8 +202,48 @@
             
             <!-- Projects Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-container">
-                <!-- Project 1 -->
-                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md animate-fadeIn delay-100" data-category="web">
+                <!-- Project 1: ResumA.I -->
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md animate-fadeIn delay-100" data-category="ai">
+                    <div class="h-48 bg-gradient-to-r from-purple-400 to-blue-500 flex items-center justify-center">
+                        <i class="fas fa-robot text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">ResumA.I</h3>
+                        <p class="text-gray-600 mb-4">A website that takes in a user's résumé and morphs it into a better AI customized tailored résumé based on a job description.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="skill-pill bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Next.js</span>
+                            <span class="skill-pill bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Tailwind CSS</span>
+                            <span class="skill-pill bg-teal-100 text-teal-800 text-xs px-3 py-1 rounded-full">MongoDB</span>
+                            <span class="skill-pill bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">Google Gemini</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <a href="https://resum-a-i.vercel.app/upload" target="_blank" class="text-indigo-600 hover:text-indigo-800"><i class="fas fa-external-link-alt"></i> Live</a>
+                            <a href="https://github.com/ayoogunade/ResumA.I" target="_blank" class="text-gray-600 hover:text-gray-800"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2: AyoZon - Amazon Clone -->
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md animate-fadeIn delay-200" data-category="web">
+                    <div class="h-48 bg-gradient-to-r from-red-400 to-orange-500 flex items-center justify-center">
+                        <i class="fab fa-amazon text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">AyoZon - Amazon Clone</h3>
+                        <p class="text-gray-600 mb-10">A full-stack e-commerce website that mimics Amazon's product listing and ordering system.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="skill-pill bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">React</span>
+                            <span class="skill-pill bg-orange-100 text-orange-800 text-xs px-3 py-1 rounded-full">Python</span>
+                            <span class="skill-pill bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">MongoDB</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <span class="text-gray-400"><i class="fas fa-wrench"></i> In Development</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3: AyoTalksMusic -->
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md animate-fadeIn delay-300" data-category="web">
                     <div class="h-48 bg-gradient-to-r from-blue-400 to-indigo-500 flex items-center justify-center">
                         <i class="fas fa-music text-white text-6xl"></i>
                     </div>
@@ -207,27 +262,8 @@
                     </div>
                 </div>
                 
-                <!-- Project 2 -->
-                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md animate-fadeIn delay-200" data-category="other">
-                    <div class="h-48 bg-gradient-to-r from-purple-400 to-pink-500 flex items-center justify-center">
-                        <i class="fas fa-map-marked-alt text-white text-6xl"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Trip-path Animator</h3>
-                        <p class="text-gray-600 mb-10">A GPS path animation tool with customizable GUI that plots, animates, and visualizes routes from CSV data.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="skill-pill bg-red-100 text-red-800 text-xs px-3 py-1 rounded-full">Java</span>
-                            <span class="skill-pill bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">JMapViewer</span>
-                            <span class="skill-pill bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">OpenStreetMap</span>
-                        </div>
-                        <div class="flex space-x-3">
-                            <a href="https://github.com/ayoogunade/PathAnimator" target="_blank" class="text-gray-600 hover:text-gray-800"><i class="fab fa-github"></i> Code</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Project 3 -->
-                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md animate-fadeIn delay-300" data-category="web">
+                <!-- Project 4: Collaborative Text Editor -->
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md animate-fadeIn delay-400" data-category="web">
                     <div class="h-48 bg-gradient-to-r from-green-400 to-teal-500 flex items-center justify-center">
                         <i class="fas fa-edit text-white text-6xl"></i>
                     </div>
@@ -246,41 +282,80 @@
                     </div>
                 </div>
                 
-                <!-- Project 4 -->
-                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md animate-fadeIn delay-400" data-category="web">
-                    <div class="h-48 bg-gradient-to-r from-red-400 to-orange-500 flex items-center justify-center">
-                        <i class="fab fa-amazon text-white text-6xl"></i>
+                <!-- Project 5: Trip-path Animator -->
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md animate-fadeIn delay-500" data-category="other">
+                    <div class="h-48 bg-gradient-to-r from-purple-400 to-pink-500 flex items-center justify-center">
+                        <i class="fas fa-map-marked-alt text-white text-6xl"></i>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Amazon Clone</h3>
-                        <p class="text-gray-600 mb-10">A full-stack e-commerce website that mimics Amazon's product listing and ordering system.</p>
+                        <h3 class="text-xl font-bold mb-2">Trip-path Animator</h3>
+                        <p class="text-gray-600 mb-10">A GPS path animation tool with customizable GUI that plots, animates, and visualizes routes from CSV data.</p>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="skill-pill bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">React</span>
-                            <span class="skill-pill bg-orange-100 text-orange-800 text-xs px-3 py-1 rounded-full">Python</span>
-                            <span class="skill-pill bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">MongoDB</span>
+                            <span class="skill-pill bg-red-100 text-red-800 text-xs px-3 py-1 rounded-full">Java</span>
+                            <span class="skill-pill bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">JMapViewer</span>
+                            <span class="skill-pill bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">OpenStreetMap</span>
                         </div>
                         <div class="flex space-x-3">
-                            <span class="text-gray-400"><i class="fas fa-wrench"></i> In Development</span>
+                            <a href="https://github.com/ayoogunade/PathAnimator" target="_blank" class="text-gray-600 hover:text-gray-800"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-16">Work Experience</h2>
+            
+            <div class="relative timeline pl-8 md:pl-0">
+                <!-- Experience 1 -->
+                <div class="mb-12 animate-fadeIn">
+                    <div class="md:flex items-start">
+                        <div class="md:w-1/4 mb-4 md:mb-0">
+                            <h3 class="text-xl font-bold text-indigo-600">Software Engineering Intern</h3>
+                            <p class="text-gray-600 font-medium">June – August 2025</p>
+                            <p class="text-gray-800">GRANTED • Saskatoon, SK</p>
+                        </div>
+                        <div class="md:w-3/4 md:pl-12">
+                            <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                <li>Developed and deployed a full-featured blogging system in Next.js with Prisma ORM and PostgreSQL, enabling CRUD operations, SEO optimization, and dynamic routing for 100% content management autonomy.</li>
+                                <li>Developed a minimal admin interface for blog creation, editing, and publishing, improving editorial efficiency.</li>
+                                <li>Implemented email verification (NextAuth/Prisma) with token/session persistence, reducing failed verifications by 30%.</li>
+                                <li>Diagnosed and resolved OAuth authentication and email verification issues, improving user sign-in success rate by eliminating recurring login failures.</li>
+                            </ul>
+                            <div class="mt-4 flex flex-wrap gap-2">
+                                <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">Next.js</span>
+                                <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">Prisma</span>
+                                <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">PostgreSQL</span>
+                                <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">NextAuth</span>
+                                <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">OAuth</span>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Project 5 -->
-                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md animate-fadeIn delay-500" data-category="ai">
-                    <div class="h-48 bg-gradient-to-r from-yellow-400 to-amber-500 flex items-center justify-center">
-                        <i class="fas fa-robot text-white text-6xl"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">ResumA.I</h3>
-                        <p class="text-gray-600 mb-4">A website that takes in a user's résumé and morphs it into a better AI customized tailored résumé based on a job description.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="skill-pill bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">React</span>
-                            <span class="skill-pill bg-black-100 text-black-800 text-xs px-3 py-1 rounded-full">NextJS</span>
-                            <span class="skill-pill bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">MongoDB</span>
-                            <span class="skill-pill bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">OpenAI</span>
+                <!-- Experience 2 -->
+                <div class="mb-12 animate-fadeIn delay-200">
+                    <div class="md:flex items-start">
+                        <div class="md:w-1/4 mb-4 md:mb-0">
+                            <h3 class="text-xl font-bold text-indigo-600">Database Project Coordinator</h3>
+                            <p class="text-gray-600 font-medium">September 2023 – May 2024</p>
+                            <p class="text-gray-800">The University of Oklahoma • Norman, Oklahoma, USA</p>
                         </div>
-                        <div class="flex space-x-3">
-                            <span class="text-gray-400"><i class="fas fa-wrench"></i> In Development</span>
+                        <div class="md:w-3/4 md:pl-12">
+                            <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                <li>Optimized engagement for 5,000+ volunteers and 200+ jobsites by implementing an efficient online volunteer registration database using Excel, MySQL, and Google Looker Studio.</li>
+                                <li>Streamlined tracking of volunteer participation, reducing registration processing time by 25%.</li>
+                                <li>Collaborated with team members to ensure accurate data management and reporting for the largest community service organization at OU.</li>
+                            </ul>
+                            <div class="mt-4 flex flex-wrap gap-2">
+                                <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">Excel</span>
+                                <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">MySQL</span>
+                                <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">Google Looker Studio</span>
+                                <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">Data Management</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -289,13 +364,13 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-20 bg-white">
+    <section id="skills" class="py-20 bg-gray-50">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-bold text-center mb-16">My Skills</h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Programming Languages -->
-                <div class="bg-gray-50 p-6 rounded-xl shadow-sm animate-fadeIn">
+                <div class="bg-white p-6 rounded-xl shadow-sm animate-fadeIn">
                     <div class="flex items-center mb-4">
                         <div class="bg-indigo-100 p-3 rounded-full mr-4">
                             <i class="fas fa-code text-indigo-600 text-xl"></i>
@@ -303,19 +378,19 @@
                         <h3 class="text-xl font-semibold">Programming Languages</h3>
                     </div>
                     <div class="flex flex-wrap gap-3">
-                        <div class="skill-item flex items-center bg-white px-4 py-2 rounded-full shadow-sm">
+                        <div class="skill-item flex items-center bg-gray-50 px-4 py-2 rounded-full shadow-sm">
                             <i class="fab fa-python text-blue-500 mr-2"></i>
                             <span>Python</span>
                         </div>
-                        <div class="skill-item flex items-center bg-white px-4 py-2 rounded-full shadow-sm">
+                        <div class="skill-item flex items-center bg-gray-50 px-4 py-2 rounded-full shadow-sm">
                             <i class="fab fa-java text-red-500 mr-2"></i>
                             <span>Java</span>
                         </div>
-                        <div class="skill-item flex items-center bg-white px-4 py-2 rounded-full shadow-sm">
+                        <div class="skill-item flex items-center bg-gray-50 px-4 py-2 rounded-full shadow-sm">
                             <i class="fab fa-js-square text-yellow-500 mr-2"></i>
                             <span>JavaScript</span>
                         </div>
-                        <div class="skill-item flex items-center bg-white px-4 py-2 rounded-full shadow-sm">
+                        <div class="skill-item flex items-center bg-gray-50 px-4 py-2 rounded-full shadow-sm">
                             <i class="fas fa-copyright text-blue-600 mr-2"></i>
                             <span>C</span>
                         </div>
@@ -323,7 +398,7 @@
                 </div>
                 
                 <!-- Web Development -->
-                <div class="bg-gray-50 p-6 rounded-xl shadow-sm animate-fadeIn delay-200">
+                <div class="bg-white p-6 rounded-xl shadow-sm animate-fadeIn delay-200">
                     <div class="flex items-center mb-4">
                         <div class="bg-indigo-100 p-3 rounded-full mr-4">
                             <i class="fas fa-globe text-indigo-600 text-xl"></i>
@@ -331,31 +406,35 @@
                         <h3 class="text-xl font-semibold">Web Development</h3>
                     </div>
                     <div class="flex flex-wrap gap-3">
-                        <div class="skill-item flex items-center bg-white px-4 py-2 rounded-full shadow-sm">
+                        <div class="skill-item flex items-center bg-gray-50 px-4 py-2 rounded-full shadow-sm">
                             <i class="fab fa-react text-blue-400 mr-2"></i>
                             <span>React</span>
                         </div>
-                        <div class="skill-item flex items-center bg-white px-4 py-2 rounded-full shadow-sm">
+                        <div class="skill-item flex items-center bg-gray-50 px-4 py-2 rounded-full shadow-sm">
                             <i class="fab fa-node-js text-green-500 mr-2"></i>
                             <span>Node.js</span>
                         </div>
-                        <div class="skill-item flex items-center bg-white px-4 py-2 rounded-full shadow-sm">
+                        <div class="skill-item flex items-center bg-gray-50 px-4 py-2 rounded-full shadow-sm">
                             <i class="fab fa-html5 text-orange-500 mr-2"></i>
                             <span>HTML5</span>
                         </div>
-                        <div class="skill-item flex items-center bg-white px-4 py-2 rounded-full shadow-sm">
+                        <div class="skill-item flex items-center bg-gray-50 px-4 py-2 rounded-full shadow-sm">
                             <i class="fab fa-css3-alt text-blue-500 mr-2"></i>
                             <span>CSS3</span>
                         </div>
-                        <div class="skill-item flex items-center bg-white px-4 py-2 rounded-full shadow-sm">
+                        <div class="skill-item flex items-center bg-gray-50 px-4 py-2 rounded-full shadow-sm">
                             <i class="fab fa-bootstrap text-purple-500 mr-2"></i>
                             <span>Bootstrap</span>
+                        </div>
+                        <div class="skill-item flex items-center bg-gray-50 px-4 py-2 rounded-full shadow-sm">
+                            <i class="fas fa-code text-indigo-600 mr-2"></i>
+                            <span>NextJS</span>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Tools & Technologies -->
-                <div class="bg-gray-50 p-6 rounded-xl shadow-sm animate-fadeIn delay-400">
+                <div class="bg-white p-6 rounded-xl shadow-sm animate-fadeIn delay-400">
                     <div class="flex items-center mb-4">
                         <div class="bg-indigo-100 p-3 rounded-full mr-4">
                             <i class="fas fa-tools text-indigo-600 text-xl"></i>
@@ -363,25 +442,29 @@
                         <h3 class="text-xl font-semibold">Tools & Technologies</h3>
                     </div>
                     <div class="flex flex-wrap gap-3">
-                        <div class="skill-item flex items-center bg-white px-4 py-2 rounded-full shadow-sm">
+                        <div class="skill-item flex items-center bg-gray-50 px-4 py-2 rounded-full shadow-sm">
                             <i class="fab fa-git-alt text-orange-600 mr-2"></i>
                             <span>Git</span>
                         </div>
-                        <div class="skill-item flex items-center bg-white px-4 py-2 rounded-full shadow-sm">
+                        <div class="skill-item flex items-center bg-gray-50 px-4 py-2 rounded-full shadow-sm">
                             <i class="fas fa-chart-line text-blue-500 mr-2"></i>
                             <span>Google Looker</span>
                         </div>
-                        <div class="skill-item flex items-center bg-white px-4 py-2 rounded-full shadow-sm">
+                        <div class="skill-item flex items-center bg-gray-50 px-4 py-2 rounded-full shadow-sm">
                             <i class="fas fa-database text-teal-500 mr-2"></i>
                             <span>MySQL</span>
                         </div>
-                        <div class="skill-item flex items-center bg-white px-4 py-2 rounded-full shadow-sm">
+                        <div class="skill-item flex items-center bg-gray-50 px-4 py-2 rounded-full shadow-sm">
                             <i class="fas fa-database text-green-500 mr-2"></i>
                             <span>MongoDB</span>
                         </div>
-                        <div class="skill-item flex items-center bg-white px-4 py-2 rounded-full shadow-sm">
+                        <div class="skill-item flex items-center bg-gray-50 px-4 py-2 rounded-full shadow-sm">
                             <i class="fas fa-map-marked-alt text-green-600 mr-2"></i>
                             <span>JMapViewer</span>
+                        </div>
+                        <div class="skill-item flex items-center bg-gray-50 px-4 py-2 rounded-full shadow-sm">
+                            <i class="fas fa-robot text-purple-500 mr-2"></i>
+                            <span>Google Gemini</span>
                         </div>
                     </div>
                 </div>
@@ -390,7 +473,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-gray-50">
+    <section id="contact" class="py-20 bg-white">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-bold text-center mb-4">Get In Touch</h2>
             <p class="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
@@ -399,7 +482,7 @@
             
             <div class="flex flex-col md:flex-row gap-12">
                 <div class="md:w-1/2 animate-fadeIn">
-                    <div class="bg-white p-8 rounded-xl shadow-sm">
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-sm">
                         <h3 class="text-xl font-semibold mb-6">Send me a message</h3>
                         <form id="contact-form">
                             <div class="mb-4">
@@ -426,7 +509,7 @@
                 </div>
                 
                 <div class="md:w-1/2 animate-fadeIn delay-200">
-                    <div class="bg-white p-8 rounded-xl shadow-sm h-full">
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-sm h-full">
                         <h3 class="text-xl font-semibold mb-6">Contact Information</h3>
                         <div class="space-y-6">
                             <div class="flex items-start">
@@ -452,13 +535,13 @@
                         <div class="mt-10">
                             <h4 class="font-medium text-gray-700 mb-4">Follow Me</h4>
                             <div class="flex space-x-4">
-                                <a href="https://github.com/ayoogunade?tab=repositories" target="_blank" class="bg-gray-100 p-3 rounded-full text-gray-700 hover:bg-indigo-100 hover:text-indigo-600 transition">
+                                <a href="https://github.com/ayoogunade?tab=repositories" target="_blank" class="bg-white p-3 rounded-full text-gray-700 hover:bg-indigo-100 hover:text-indigo-600 transition">
                                     <i class="fab fa-github"></i>
                                 </a>
-                                <a href="https://www.linkedin.com/in/ayoogunade/" target="_blank" class="bg-gray-100 p-3 rounded-full text-gray-700 hover:bg-indigo-100 hover:text-indigo-600 transition">
+                                <a href="https://www.linkedin.com/in/ayoogunade/" target="_blank" class="bg-white p-3 rounded-full text-gray-700 hover:bg-indigo-100 hover:text-indigo-600 transition">
                                     <i class="fab fa-linkedin-in"></i>
                                 </a>
-                                <a href="https://www.instagram.com/ayotalksmusic/" target="_blank" class="bg-gray-100 p-3 rounded-full text-gray-700 hover:bg-indigo-100 hover:text-indigo-600 transition">
+                                <a href="https://www.instagram.com/ayotalksmusic/" target="_blank" class="bg-white p-3 rounded-full text-gray-700 hover:bg-indigo-100 hover:text-indigo-600 transition">
                                     <i class="fab fa-instagram"></i>
                                 </a>
                             </div>
@@ -481,6 +564,7 @@
                     <a href="#home" class="text-gray-400 hover:text-white transition">Home</a>
                     <a href="#about" class="text-gray-400 hover:text-white transition">About</a>
                     <a href="#projects" class="text-gray-400 hover:text-white transition">Projects</a>
+                    <a href="#experience" class="text-gray-400 hover:text-white transition">Experience</a>
                     <a href="#skills" class="text-gray-400 hover:text-white transition">Skills</a>
                     <a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a>
                 </div>
@@ -536,9 +620,9 @@
             button.addEventListener('click', function() {
                 // Update active button styling
                 document.querySelectorAll('.filter-btn').forEach(btn => {
-                    btn.classList.remove('bg-indigo-100', 'text-indigo-700');
+                    btn.classList.remove('filter-active');
                 });
-                this.classList.add('bg-indigo-100', 'text-indigo-700');
+                this.classList.add('filter-active');
                 
                 const filter = this.getAttribute('data-filter');
                 const projects = document.querySelectorAll('.project-card');
