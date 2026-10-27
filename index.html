@@ -1,887 +1,437 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ayo Ogunade's Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Favicon -->
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-    <!-- For modern browsers (PNG format) -->
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico">
-    <!-- For Apple devices -->
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <!-- For Android -->
-    <link rel="manifest" href="site.webmanifest">
-    <style>
-        /* Custom CSS for animations and effects */
-        .project-card {
-            transition: all 0.3s ease;
-        }
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-        .skill-pill {
-            transition: all 0.2s ease;
-        }
-        .skill-pill:hover {
-            transform: scale(1.05);
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .animate-fadeIn {
-            animation: fadeIn 0.6s ease forwards;
-        }
-        .delay-100 { animation-delay: 0.1s; }
-        .delay-200 { animation-delay: 0.2s; }
-        .delay-300 { animation-delay: 0.3s; }
-        .delay-400 { animation-delay: 0.4s; }
-        .delay-500 { animation-delay: 0.5s; }
-        .filter-active {
-            background-color: #e0e7ff;
-            color: #4338ca;
-        }
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            height: 100%;
-            width: 2px;
-            background: linear-gradient(to bottom, #6366f1, #8b5cf6);
-        }
-        .achievement-badge {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-        }
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: .8; }
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ayo Ogunade, software developer</title>
+  <meta name="description" content="Ayo Ogunade is a computer science student at the University of Saskatchewan and co-founder of CalenDue. Thirteen projects: apps built for classmates, a church, Nigerian farmers, a bus route and a clothing brand.">
+  <link rel="icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add('js')</script>
 </head>
-<body class="bg-gray-50 font-sans antialiased">
-    <!-- Navigation -->
-    <nav class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex items-center">
-                    <span class="text-xl font-bold text-indigo-600">Ayo's Portfolio</span>
-                </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#home" class="text-gray-700 hover:text-indigo-600 transition">Home</a>
-                    <a href="#about" class="text-gray-700 hover:text-indigo-600 transition">About</a>
-                    <a href="#projects" class="text-gray-700 hover:text-indigo-600 transition">Projects</a>
-                    <a href="#experience" class="text-gray-700 hover:text-indigo-600 transition">Experience</a>
-                    <a href="#skills" class="text-gray-700 hover:text-indigo-600 transition">Skills</a>
-                    <a href="#contact" class="text-gray-700 hover:text-indigo-600 transition">Contact</a>
-                </div>
-                <div class="md:hidden flex items-center">
-                    <button id="menu-toggle" class="text-gray-700">
-                        <i class="fas fa-bars text-xl"></i>
-                    </button>
-                </div>
-            </div>
+<body>
+
+<!-- Hero: the whole first screen is a contact sheet of the work, with one text cell -->
+<header class="hero" id="top">
+  <!-- Every frame jumps to its project; the list below is the accessible way in, so these stay out of the tab order -->
+  <div class="sheet" aria-hidden="true">
+    <div class="col" style="--off:0px">
+      <a class="frame" href="#calendue" tabindex="-1"><img src="website_images/work/calendue-devices.webp" width="1200" height="750" alt=""><span class="tag t1">CalenDue</span></a>
+      <a class="frame" href="#agrilink" tabindex="-1"><img src="website_images/work/agrilink-browse.webp" width="352" height="760" alt=""><span class="tag t2">AgriLink</span></a>
+      <a class="frame" href="#studymax" tabindex="-1"><img src="website_images/work/studymax-landing.webp" width="1200" height="750" alt=""><span class="tag t3">StudyMax</span></a>
+      <a class="frame" href="#praisecount" tabindex="-1"><img src="website_images/work/praise-family.webp" width="352" height="760" alt=""><span class="tag t4">PraiseCount</span></a>
+    </div>
+    <div class="col" style="--off:-90px">
+      <a class="frame" href="#bettertransit" tabindex="-1"><img src="website_images/work/transit-map.webp" width="352" height="760" alt=""><span class="tag t3">BetterTransit</span></a>
+      <a class="frame" href="#kw2d" tabindex="-1"><img src="website_images/work/kw2d-home.webp" width="1200" height="750" alt=""><span class="tag t1">KW2D</span></a>
+      <a class="frame" href="#calendue" tabindex="-1"><img src="website_images/work/calendue-review.webp" width="351" height="760" alt=""><span class="tag t2">CalenDue</span></a>
+      <a class="frame" href="#praisecount" tabindex="-1"><img src="website_images/work/praise-done.webp" width="352" height="760" alt=""><span class="tag t4">PraiseCount</span></a>
+    </div>
+    <div class="col col-wide"></div>
+    <div class="col" style="--off:-20px">
+      <a class="frame" href="#studymax" tabindex="-1"><img src="website_images/work/studymax-dashboard.webp" width="1200" height="750" alt=""><span class="tag t1">StudyMax</span></a>
+      <a class="frame" href="#studibudi" tabindex="-1"><img src="website_images/work/studibudi-components.webp" width="1200" height="854" alt=""><span class="tag t4">Studi-Budi</span></a>
+      <a class="frame" href="#agrilink" tabindex="-1"><img src="website_images/work/agrilink-listing_detail.webp" width="352" height="760" alt=""><span class="tag t3">AgriLink</span></a>
+    </div>
+    <div class="col" style="--off:-70px">
+      <a class="frame" href="#studibudi" tabindex="-1"><img src="website_images/work/studibudi-home.webp" width="1200" height="750" alt=""><span class="tag t1">Studi-Budi</span></a>
+      <a class="frame" href="#calendue" tabindex="-1"><img src="website_images/work/calendue-callie.webp" width="351" height="760" alt=""><span class="tag t2">CalenDue</span></a>
+      <a class="frame" href="#bettertransit" tabindex="-1"><img src="website_images/work/transit-pinned.webp" width="352" height="760" alt=""><span class="tag t4">BetterTransit</span></a>
+      <a class="frame" href="#calendue" tabindex="-1"><img src="website_images/work/calendue-calendar.webp" width="351" height="760" alt=""><span class="tag t3">CalenDue</span></a>
+    </div>
+  </div>
+
+  <div class="cell">
+    <img class="cell-photo" src="website_images/work/ayo-hero.webp" width="828" height="660" alt="Ayo Ogunade in a navy suit, smiling">
+    <div class="cell-text">
+      <h1 class="wordmark">Ayo <span>Ogunade</span></h1>
+      <p class="cell-line">I build apps for the people around me, from my church to my bus stop.</p>
+      <p class="cell-facts">Honours Computer Science (Software Engineering) at USask, class of 2029. Co-founder and CEO of CalenDue. Open to Summer 2027 internships.</p>
+      <a class="btn" href="#work">See my projects</a>
+      <nav class="cell-links" aria-label="Elsewhere">
+        <a href="https://github.com/ayoogunade">GitHub</a>
+        <a href="https://www.linkedin.com/in/ayoogunade/">LinkedIn</a>
+        <a href="Ayo_Ogunade_CSPIP_Tech_Resume.pdf">Resume</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- Work: one strip per project, re-ordered by the rail -->
+<section class="work" id="work" aria-labelledby="work-title">
+  <div class="rail">
+    <h2 id="work-title" class="rail-title">Work</h2>
+    <div class="rail-pin">
+    <div class="sorts" role="group" aria-label="Order the projects">
+      <button type="button" class="sort" data-sort="strongest" aria-pressed="true">Strongest first</button>
+      <button type="button" class="sort" data-sort="learned" aria-pressed="false">Taught me most</button>
+      <button type="button" class="sort" data-sort="proud" aria-pressed="false">Proudest of</button>
+      <button type="button" class="sort" data-sort="built" aria-pressed="false">In build order</button>
+    </div>
+    <p class="sort-note" aria-live="polite" id="sort-note">The ones with the most behind them come first.</p>
+    </div>
+  </div>
+
+  <ol class="projects" id="projects">
+
+    <li class="project" id="calendue" data-strongest="1" data-learned="1" data-proud="1" data-built="6">
+      <div class="strip" tabindex="0" aria-label="CalenDue screenshots">
+        <img class="w" src="website_images/work/calendue-devices.webp" width="1200" height="750" alt="CalenDue's home screen on a laptop and its events list on a phone" loading="lazy">
+        <video class="clip" src="website_images/work/calendue-phone.mp4" poster="website_images/work/calendue-phone-poster.webp" width="406" height="720" muted loop playsinline preload="none" aria-label="Thirty-second film of CalenDue on a phone"></video>
+        <img src="website_images/work/calendue-review.webp" width="351" height="760" alt="Reviewing seven items CalenDue found in a CMPT 214 outline" loading="lazy">
+        <img src="website_images/work/calendue-calendar.webp" width="351" height="760" alt="CalenDue's week view with classes and due dates" loading="lazy">
+        <img src="website_images/work/calendue-callie.webp" width="351" height="760" alt="Callie, CalenDue's course assistant, answering a question" loading="lazy">
+      </div>
+      <div class="caption"><h3>CalenDue</h3><span class="kind">AI academic calendar</span><span class="year">2025–now</span></div>
+      <div class="body">
+        <div class="lede">
+          <p class="why" data-why-strongest="Live on the web, the App Store and Google Play, with paying students." data-why-learned="Running a real product: App Store rejections, OTA builds, refunds, analytics, a team." data-why-proud="It started as a 27-hour hackathon win and became a company I co-founded." data-why-built="Started at CoHack, September 2025.">Live on the web, the App Store and Google Play, with paying students.</p>
+          <p>Students upload their course outlines and CalenDue finds every assignment, quiz and exam, then sends them to Google Calendar or Apple Calendar. Callie, its assistant, answers questions from the same pages instead of guessing.</p>
         </div>
-        <!-- Mobile menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
-            <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50">Home</a>
-                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50">About</a>
-                <a href="#projects" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50">Projects</a>
-                <a href="#experience" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50">Experience</a>
-                <a href="#skills" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50">Skills</a>
-                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50">Contact</a>
-            </div>
+        <ul class="points">
+          <li>First place at CoHack 2025; now a startup where I am co-founder and CEO.</li>
+          <li>Built Apple Calendar (CalDAV) sync, Canvas LMS sync, the Callie RAG assistant and the admin tooling.</li>
+          <li>Degree Tree for four universities, a 10-day free trial, and the iOS and Android apps on Expo.</li>
+        </ul>
+        <p class="stack">Next.js · TypeScript · Prisma · Supabase · Expo · Claude API · LangChain</p>
+        <p class="links"><a href="https://www.calendue.ca">calendue.ca</a></p>
+      </div>
+    </li>
+
+    <li class="project" id="agrilink" data-strongest="2" data-learned="2" data-proud="3" data-built="8">
+      <div class="strip" tabindex="0" aria-label="AgriLink screenshots">
+        <img src="website_images/work/agrilink-welcome.webp" width="352" height="760" alt="AgriLink's welcome screen: Trade farm produce without middlemen" loading="lazy">
+        <img src="website_images/work/agrilink-browse.webp" width="352" height="760" alt="Browsing verified produce listings from farmers in Kaduna" loading="lazy">
+        <img src="website_images/work/agrilink-listing_detail.webp" width="352" height="760" alt="A soybean listing: 120 tonnes in Zaria, Kaduna, with the seller's details" loading="lazy">
+        <img src="website_images/work/agrilink-chat.webp" width="352" height="760" alt="A buyer and seller chatting about an order" loading="lazy">
+        <img src="website_images/work/agrilink-seller_home.webp" width="352" height="760" alt="The seller's home screen" loading="lazy">
+        <img src="website_images/work/agrilink-my_listings.webp" width="352" height="760" alt="A seller's list of their own listings" loading="lazy">
+      </div>
+      <div class="caption"><h3>AgriLink</h3><span class="kind">Farm produce marketplace</span><span class="year">2026</span></div>
+      <div class="body">
+        <div class="lede">
+          <p class="why" data-why-strongest="Web and mobile, submitted to both app stores, with real payments designed in." data-why-learned="Money: escrow-style payments, commission splits, bank lookups and two store reviews." data-why-proud="It is built for farmers in Nigeria, not for a demo." data-why-built="First commit May 2026.">Web and mobile, submitted to both app stores, with real payments designed in.</p>
+          <p>A marketplace where Nigerian farmers sell produce straight to buyers, with sales consultants who bring sellers on and admins who verify every listing.</p>
         </div>
-    </nav>
+        <ul class="points">
+          <li>Paystack payments held until the buyer confirms delivery, then released, with a 3.5% platform and 1.5% consultant split.</li>
+          <li>Next.js web app and Expo mobile app on one Supabase backend, submitted to the App Store and Google Play.</li>
+          <li>Admin batch review of users and listings, order tracking, email notifications.</li>
+        </ul>
+        <p class="stack">Next.js · Expo · Supabase · Paystack · Google Maps · Vercel</p>
+        <p class="links"><a href="https://agrilink-zeta.vercel.app">agrilink-zeta.vercel.app</a></p>
+      </div>
+    </li>
 
-    <!-- Hero Section -->
-    <section id="home" class="py-20 bg-gradient-to-r from-indigo-500 to-purple-600 text-white">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row items-center justify-between">
-                <div class="md:w-1/2 mb-10 md:mb-0 animate-fadeIn">
-                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Hi, I'm <span class="text-yellow-300">Ayo Ogunade</span></h1>
-                    <h2 class="text-2xl md:text-3xl font-semibold mb-4">Full Stack Developer & AI Enthusiast</h2>
-                    
-                    <!-- Achievement Badges -->
-                    <div class="flex flex-wrap gap-3 mb-6">
-                        <span class="achievement-badge text-white px-4 py-2 rounded-full text-sm font-semibold flex items-center">
-                            <i class="fas fa-trophy mr-2"></i> 1st Place @ CoHack 2025
-                        </span>
-                        <span class="bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-semibold flex items-center">
-                            <i class="fas fa-rocket mr-2"></i> Co-Founder @ CalenDue
-                        </span>
-                    </div>
-                    
-                    <p class="text-lg mb-6">Building AI-powered solutions and full-stack applications. Passionate about EdTech and making learning accessible to everyone.</p>
-                    <div class="inline-flex items-center bg-white/10 border border-white/20 rounded-lg px-4 py-2 mb-6 text-sm">
-                        <span class="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
-                        Currently growing CalenDue for the Fall 2026 semester
-                    </div>
-                    <div class="flex flex-wrap gap-4">
-                        <a href="#projects" class="bg-white text-indigo-600 px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition">View My Work</a>
-                        <a href="#contact" class="border-2 border-white text-white px-6 py-3 rounded-lg font-medium hover:bg-white hover:text-indigo-600 transition">Contact Me</a>
-                        <a href="https://www.linkedin.com/in/ayoogunade/" target="_blank" class="bg-white/10 border-2 border-white text-white px-6 py-3 rounded-lg font-medium hover:bg-white hover:text-indigo-600 transition flex items-center">
-                            <i class="fab fa-linkedin mr-2"></i> LinkedIn
-                        </a>
-                        <a href="/SWE_ Harris.pdf" target="_blank" class="bg-indigo-700 text-white px-6 py-3 rounded-lg font-medium hover:bg-indigo-800 transition flex items-center">
-                            <i class="fas fa-file-alt mr-2"></i> View Resume
-                        </a>
-                    </div>
-                </div>
-                <div class="md:w-1/2 flex justify-center animate-fadeIn delay-200">
-                    <div class="relative">
-                        <div class="w-64 h-64 md:w-80 md:h-80 bg-indigo-400 rounded-full overflow-hidden border-4 border-white shadow-xl">
-                            <img src="/Full Bio Pic.jpeg" alt="Ayo Ogunade">
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <li class="project" id="studymax" data-strongest="3" data-learned="4" data-proud="5" data-built="9">
+      <div class="strip" tabindex="0" aria-label="StudyMax screenshots">
+        <img class="w" src="website_images/work/studymax-landing.webp" width="1200" height="750" alt="StudyMax landing page with Max the owl in a growing tree" loading="lazy">
+        <img class="w" src="website_images/work/studymax-dashboard.webp" width="1200" height="750" alt="Dashboard for a sample student: one course away from the Social Computing specialization" loading="lazy">
+        <img class="w" src="website_images/work/studymax-plan.webp" width="1200" height="750" alt="The degree drawn as a tree of courses, term by term" loading="lazy">
+      </div>
+      <div class="caption"><h3>StudyMax</h3><span class="kind">Degree roadmap, AI advisor</span><span class="year">2026</span></div>
+      <div class="body">
+        <div class="lede">
+          <p class="why" data-why-strongest="Built in two days, and it works end to end on real USask program data." data-why-learned="Shipping a full product in two days: scope hard, demo what works." data-why-proud="It finds the specialization you are one course away from. I needed that." data-why-built="Hackathon, 26–27 September 2026.">Built in two days, and it works end to end on real USask program data.</p>
+          <p>StudyMax reads your transcript and shows the credentials you are closest to, the one course that advances most of them, and a term-by-term path to finish. Max, an owl, phones you about the award closing soonest.</p>
         </div>
-    </section>
+        <ul class="points">
+          <li>12 CS specializations, 4 certificates and a minor, and prerequisite chains for about 240 courses.</li>
+          <li>Max the advisor can make live changes to your plan and place phone calls.</li>
+          <li>Web, iOS and Android from one codebase.</li>
+        </ul>
+        <p class="stack">React · Vite · TypeScript · Prisma · Capacitor · Vapi</p>
+        <p class="links"><a href="https://www.studymax.study">studymax.study</a> <a href="https://github.com/Calendue/StudyMax">GitHub</a></p>
+      </div>
+    </li>
 
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-white">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center mb-16 relative">
-                <span class="relative inline-block">
-                    About Me
-                    <span class="absolute bottom-0 left-0 w-full h-1 bg-indigo-500"></span>
-                </span>
-            </h2>
-            <div class="animate-fadeIn max-w-4xl mx-auto">
-                <h3 class="text-2xl font-semibold mb-4">Who am I?</h3>
-                <p class="text-gray-600 mb-6">
-                    👋 Hi, I'm Ayo Ogunade, a 4th-year Computer Science student at the University of Saskatchewan with a passion for Full-Stack Development, AI, and EdTech.
-                    I recently won 1st place at CoHack 2025 with CalenDue, an AI-powered academic calendar platform, and completed a software engineering internship at GRANTED where
-                    I built production-ready applications that reduced workflow time by 40%.
-                </p>
-                <p class="text-gray-600 mb-8">
-                    My mission is building educational technology that makes learning accessible for students worldwide. I specialize in creating AI-integrated full-stack applications
-                    using Next.js, React, TypeScript, and modern AI tools like Claude API and LangChain. Outside of coding, I'm actively involved with the National Society of Black Engineers (NSBE),
-                    Sankofatech's Achievers in Technology (AIT) program, and the Uniting the Prairies Tech conference. When I'm not building apps, you'll find me gaming, exploring new music,
-                    or binge-watching shows.
-                </p>
-
-                <!-- Quick Stats -->
-                <div class="grid grid-cols-3 gap-6 mb-10">
-                    <div class="text-center">
-                        <div class="text-3xl font-bold text-indigo-600">1st</div>
-                        <div class="text-sm text-gray-600">Place @ CoHack</div>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-3xl font-bold text-indigo-600">6+</div>
-                        <div class="text-sm text-gray-600">Major Projects</div>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-3xl font-bold text-indigo-600">1000+</div>
-                        <div class="text-sm text-gray-600">Users Served</div>
-                    </div>
-                </div>
-
-                <!-- Community & Leadership -->
-                <div class="border-t border-gray-100 pt-8">
-                    <h4 class="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-6">Community &amp; Leadership</h4>
-                    <div class="flex flex-wrap items-center gap-8">
-                        <div class="flex items-center gap-3">
-                            <img src="/website_images/NSBE.png" alt="NSBE" class="h-12 w-auto object-contain">
-                            <span class="text-sm text-gray-600 font-medium">National Society of<br>Black Engineers</span>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <img src="/website_images/AIT.png" alt="Sankofatech AIT" class="h-12 w-auto object-contain">
-                            <span class="text-sm text-gray-600 font-medium">Sankofatech<br>Achievers in Tech</span>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <img src="/website_images/Uniting_The_Prairies.png" alt="Uniting the Prairies" class="h-12 w-auto object-contain">
-                            <span class="text-sm text-gray-600 font-medium">Uniting the<br>Prairies Tech</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <li class="project" id="kw2d" data-strongest="4" data-learned="8" data-proud="4" data-built="12">
+      <div class="strip" tabindex="0" aria-label="KW2D screenshots">
+        <img class="w" src="website_images/work/kw2d-home.webp" width="1200" height="750" alt="KW2D's home page: Know What 2 Do, Drop 01, the Meisai Collection" loading="lazy">
+        <img class="w" src="website_images/work/kw2d-product.webp" width="1200" height="750" alt="The Meisai Collection hoodie product page" loading="lazy">
+        <img src="website_images/work/kw2d-CatalogIMG3a.webp" width="355" height="760" alt="Lookbook photograph of the grey hoodie" loading="lazy">
+        <img class="w" src="website_images/work/kw2d-CatalogIMG4b.webp" width="507" height="760" alt="Lookbook photograph of the camo hoodie" loading="lazy">
+      </div>
+      <div class="caption"><h3>KW2D</h3><span class="kind">Clothing brand storefront</span><span class="year">2026</span></div>
+      <div class="body">
+        <div class="lede">
+          <p class="why" data-why-strongest="A real client, a real drop, and a site that now belongs to the brand instead of a theme." data-why-learned="Working for a client: what they need from me, and what only they can provide." data-why-proud="It looks like the clothes. The brand owns every line of it." data-why-built="Theme exported June 2026, rebuilt October 2026.">A real client, a real drop, and a site that now belongs to the brand instead of a theme.</p>
+          <p>Know What 2 Do is a Vancouver streetwear brand that started on a Shopify theme. I moved it to its own storefront, rebuilding its slideshow, drop showcase and waitlist, so it no longer pays for or depends on Shopify.</p>
         </div>
-    </section>
+        <ul class="points">
+          <li>Full-screen lookbook slideshow, Drop 01 showcase, product pages, light and dark themes.</li>
+          <li>Early-access waitlist with a 10% code and an admin area on Supabase.</li>
+          <li>Checkout staged on Stripe, switched on once the owner sets up payments.</li>
+        </ul>
+        <p class="stack">Next.js · TypeScript · Supabase · Stripe</p>
+        <p class="links"><a href="https://kw2d.vercel.app">kw2d.vercel.app</a> <a href="https://github.com/kw2d9/kw2d">GitHub</a></p>
+      </div>
+    </li>
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-gray-50">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center mb-4 relative">
-                <span class="relative inline-block">
-                    Featured Projects
-                    <span class="absolute bottom-0 left-0 w-full h-1 bg-indigo-500"></span>
-                </span>
-            </h2>
-            <p class="text-center text-gray-600 mb-12">Check out my latest work in AI, full-stack development, and EdTech</p>
-            
-            <!-- Filter Buttons -->
-            <div class="flex justify-center flex-wrap gap-4 mb-12">
-                <button class="filter-btn filter-active px-6 py-2 rounded-full border-2 border-indigo-200 font-medium transition" data-filter="all">All</button>
-                <button class="filter-btn px-6 py-2 rounded-full border-2 border-indigo-200 font-medium transition hover:bg-indigo-50" data-filter="ai">AI/ML</button>
-                <button class="filter-btn px-6 py-2 rounded-full border-2 border-indigo-200 font-medium transition hover:bg-indigo-50" data-filter="fullstack">Full-Stack</button>
-                <button class="filter-btn px-6 py-2 rounded-full border-2 border-indigo-200 font-medium transition hover:bg-indigo-50" data-filter="edtech">EdTech</button>
-            </div>
-
-            <!-- Project Cards -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- CalenDue - Featured -->
-                <div class="project-card bg-white rounded-xl shadow-md overflow-hidden animate-fadeIn md:col-span-2 lg:col-span-3" data-category="ai edtech">
-                    <div class="md:flex">
-                        <div class="md:w-1/3 bg-indigo-950 relative overflow-hidden flex flex-col items-center justify-center p-4">
-                            <img src="/website_images/Calendue_picture.png" alt="CalenDue" class="w-full object-contain">
-                            <div class="mt-4">
-                                <span class="inline-flex items-center bg-yellow-400 text-yellow-900 px-4 py-2 rounded-full text-sm font-bold shadow-md">
-                                    <i class="fas fa-trophy mr-2"></i> 1st Place &middot; CoHack 2025
-                                </span>
-                            </div>
-                        </div>
-                        <div class="md:w-2/3 p-8">
-                            <div class="flex items-center justify-between mb-4">
-                                <h3 class="text-2xl font-bold">CalenDue</h3>
-                                <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-semibold">Featured</span>
-                            </div>
-                            <p class="text-gray-600 mb-4">
-                                AI-powered academic calendar platform that transforms syllabus documents into fully integrated calendars in under 30 seconds. 
-                                Built during a 27-hour hackathon with advanced AI parsing, triple calendar integration, and a custom RAG chatbot.
-                            </p>
-                            <div class="mb-4">
-                                <h4 class="font-semibold text-gray-700 mb-2">Key Achievements:</h4>
-                                <ul class="text-sm text-gray-600 space-y-1">
-                                    <li>✅ 95% parsing success rate with three-tier error recovery</li>
-                                    <li>✅ Google Calendar, Apple Calendar, and Canvas LMS integration</li>
-                                    <li>✅ Real-time bidirectional sync with instant conflict detection</li>
-                                    <li>✅ Reduced semester setup from 2-4 hours to 30 seconds</li>
-                                </ul>
-                            </div>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="skill-pill bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-xs font-medium">Next.js 15</span>
-                                <span class="skill-pill bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-xs font-medium">TypeScript</span>
-                                <span class="skill-pill bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-xs font-medium">Claude Sonnet 4</span>
-                                <span class="skill-pill bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-xs font-medium">LangChain</span>
-                                <span class="skill-pill bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-xs font-medium">RAG</span>
-                                <span class="skill-pill bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-xs font-medium">Tailwind CSS</span>
-                            </div>
-                            <div class="flex space-x-4">
-                                <a href="https://www.calendue.ca" target="_blank" class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition flex items-center text-sm">
-                                    <i class="fas fa-external-link-alt mr-2"></i> Visit Site
-                                </a>
-                                <a href="https://github.com/ayoogunade" target="_blank" class="border-2 border-indigo-600 text-indigo-600 px-4 py-2 rounded-lg hover:bg-indigo-50 transition flex items-center text-sm">
-                                    <i class="fab fa-github mr-2"></i> View Code
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- GRANTED Internship Project -->
-                <div class="project-card bg-white rounded-xl shadow-md overflow-hidden animate-fadeIn delay-100" data-category="fullstack ai">
-                    <div class="h-48 overflow-hidden">
-                        <img src="/website_images/GRANTED.png" alt="GRANTED" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center justify-between mb-2">
-                            <h3 class="text-xl font-bold">AI Blogging Platform</h3>
-                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-semibold">Production</span>
-                        </div>
-                        <p class="text-sm text-gray-500 mb-3">@ GRANTED Internship (Summer 2025)</p>
-                        <p class="text-gray-600 mb-4">
-                            Production-ready AI-integrated blogging platform built with Next.js and PostgreSQL. Reduced editorial workflow time by 40% and improved user authentication reliability by 30%.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="skill-pill bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-medium">Next.js</span>
-                            <span class="skill-pill bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-medium">React</span>
-                            <span class="skill-pill bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-medium">PostgreSQL</span>
-                            <span class="skill-pill bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-medium">Prisma</span>
-                            <span class="skill-pill bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-medium">Docker</span>
-                            <span class="skill-pill bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-medium">NextAuth</span>
-                        </div>
-                        <div class="text-sm text-gray-600 space-y-1 mb-4">
-                            <p>• 40% reduction in workflow time</p>
-                            <p>• 30% fewer auth failures</p>
-                            <p>• Agile & Docker containerization</p>
-                        </div>
-                        <a href="https://www.granted.tech" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition inline-flex items-center text-sm">
-                            <i class="fas fa-external-link-alt mr-2"></i> Visit GRANTED
-                        </a>
-                    </div>
-                </div>
-
-                <!-- ResumA.I -->
-                <div class="project-card bg-white rounded-xl shadow-md overflow-hidden animate-fadeIn delay-200" data-category="ai fullstack">
-                    <div class="h-48 overflow-hidden">
-                        <img src="/website_images/ResumAI.png" alt="ResumA.I" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3">ResumA.I</h3>
-                        <p class="text-gray-600 mb-4">
-                            AI-powered resume optimization platform using Google Gemini LLM. Reduced manual editing time by 65% through intelligent content suggestions and custom prompt engineering.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="skill-pill bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-xs font-medium">Next.js</span>
-                            <span class="skill-pill bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-xs font-medium">Google Gemini</span>
-                            <span class="skill-pill bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-xs font-medium">MongoDB</span>
-                            <span class="skill-pill bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-xs font-medium">Tailwind CSS</span>
-                        </div>
-                        <div class="text-sm text-gray-600 space-y-1 mb-4">
-                            <p>• 65% reduction in editing time</p>
-                            <p>• 40% API performance boost</p>
-                            <p>• Intelligent AI suggestions</p>
-                        </div>
-                        <a href="https://github.com/ayoogunade/ResumA.I" target="_blank" class="border-2 border-purple-600 text-purple-600 px-4 py-2 rounded-lg hover:bg-purple-50 transition inline-flex items-center text-sm">
-                            <i class="fab fa-github mr-2"></i> View Code
-                        </a>
-                    </div>
-                </div>
-
-                <!-- AyoZon -->
-                <div class="project-card bg-white rounded-xl shadow-md overflow-hidden animate-fadeIn delay-300" data-category="fullstack">
-                    <div class="h-48 bg-gradient-to-br from-orange-500 to-red-600 flex flex-col items-center justify-center">
-                        <i class="fas fa-shopping-cart text-white text-5xl mb-3 opacity-90"></i>
-                        <span class="text-white text-lg font-bold tracking-widest uppercase">AyoZon</span>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3">AyoZon</h3>
-                        <p class="text-gray-600 mb-4">
-                            Full-stack e-commerce platform serving 1,000+ users with React frontend and Python/Flask microservices backend. Features RESTful API with comprehensive CRUD operations.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="skill-pill bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-xs font-medium">Next.js</span>
-                            <span class="skill-pill bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-xs font-medium">Python</span>
-                            <span class="skill-pill bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-xs font-medium">Flask</span>
-                            <span class="skill-pill bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-xs font-medium">MongoDB</span>
-                            <span class="skill-pill bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-xs font-medium">REST API</span>
-                        </div>
-                        <div class="text-sm text-gray-600 space-y-1 mb-4">
-                            <p>• 1,000+ active users</p>
-                            <p>• Microservices architecture</p>
-                            <p>• SQL/NoSQL integration</p>
-                        </div>
-                        <a href="https://github.com/ayoogunade/AyoZon" target="_blank" class="border-2 border-orange-600 text-orange-600 px-4 py-2 rounded-lg hover:bg-orange-50 transition inline-flex items-center text-sm">
-                            <i class="fab fa-github mr-2"></i> View Code
-                        </a>
-                    </div>
-                </div>
-
-                <!-- AyoTalksMusic -->
-                <div class="project-card bg-white rounded-xl shadow-md overflow-hidden animate-fadeIn delay-400" data-category="fullstack">
-                    <div class="h-48 overflow-hidden">
-                        <img src="/website_images/Ayotalksmusic.png" alt="AyoTalksMusic" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3">AyoTalksMusic</h3>
-                        <p class="text-gray-600 mb-4">
-                            Personal music review platform showcasing album reviews with searchable database, responsive design, and regular content updates. A passion project combining tech and music.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="skill-pill bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-medium">HTML/CSS</span>
-                            <span class="skill-pill bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-medium">JavaScript</span>
-                            <span class="skill-pill bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-medium">Responsive Design</span>
-                        </div>
-                        <div class="flex space-x-4">
-                            <a href="https://ayotalksmusic.store/" target="_blank" class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition flex items-center text-sm">
-                                <i class="fas fa-external-link-alt mr-2"></i> Visit Site
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Collab Text Editor -->
-                <div class="project-card bg-white rounded-xl shadow-md overflow-hidden animate-fadeIn delay-500" data-category="fullstack">
-                    <div class="h-48 bg-gradient-to-br from-indigo-500 to-blue-600 flex flex-col items-center justify-center">
-                        <i class="fas fa-edit text-white text-5xl mb-3 opacity-90"></i>
-                        <span class="text-white text-lg font-bold tracking-wide">Collab Editor</span>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3">Collab Text Editor</h3>
-                        <p class="text-gray-600 mb-4">
-                            Real-time collaborative text editor built with React and WebSocket technology. Enables multiple users to edit documents simultaneously with live updates.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="skill-pill bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-xs font-medium">React</span>
-                            <span class="skill-pill bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-xs font-medium">WebSocket</span>
-                            <span class="skill-pill bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-xs font-medium">Real-time</span>
-                            <span class="skill-pill bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-xs font-medium">Render</span>
-                        </div>
-                        <a href="https://github.com/ayoogunade/Collab-Editor-Project" target="_blank" class="border-2 border-indigo-600 text-indigo-600 px-4 py-2 rounded-lg hover:bg-indigo-50 transition inline-flex items-center text-sm">
-                            <i class="fab fa-github mr-2"></i> View Code
-                        </a>
-                    </div>
-                </div>
-            </div>
+    <li class="project" id="praisecount" data-strongest="5" data-learned="6" data-proud="2" data-built="10">
+      <div class="strip" tabindex="0" aria-label="PraiseCount screenshots">
+        <img src="website_images/work/praise-checkin.webp" width="352" height="760" alt="Check-in screen: Are you a member?" loading="lazy">
+        <img src="website_images/work/praise-recognised.webp" width="352" height="760" alt="A recognised phone offering the people in its household" loading="lazy">
+        <img src="website_images/work/praise-family.webp" width="352" height="760" alt="Welcome back, David, with family members to check in too" loading="lazy">
+        <img src="website_images/work/praise-done.webp" width="352" height="760" alt="Confirmation: three people checked in, five-week streak" loading="lazy">
+      </div>
+      <div class="caption"><h3>PraiseCount</h3><span class="kind">Church check-in</span><span class="year">2026</span></div>
+      <div class="body">
+        <div class="lede">
+          <p class="why" data-why-strongest="Every slice of the spec is built, tested and deployed." data-why-learned="Auth that strangers can use: signed QR codes, recognised phones, no passwords for members." data-why-proud="It is for my own church." data-why-built="Built 29 September to 1 October 2026.">Every slice of the spec is built, tested and deployed.</p>
+          <p>Members scan a QR code at the door and check in their whole household in two taps. Admins see attendance by service, import the member list and follow up with guests.</p>
         </div>
-    </section>
+        <ul class="points">
+          <li>Recognised phones, households, guests, preferred names and attendance streaks.</li>
+          <li>Member import from CSV, Excel and PDF with a preview before anything is saved.</li>
+          <li>Admin roles with confirmation steps; members never need an account.</li>
+        </ul>
+        <p class="stack">Next.js · TypeScript · Prisma · PostgreSQL · Clerk · Vitest</p>
+        <p class="links"><a href="https://praisecount.vercel.app">praisecount.vercel.app</a></p>
+      </div>
+    </li>
 
-    <!-- Experience Section -->
-    <section id="experience" class="py-20 bg-white">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center mb-16 relative">
-                <span class="relative inline-block">
-                    Experience
-                    <span class="absolute bottom-0 left-0 w-full h-1 bg-indigo-500"></span>
-                </span>
-            </h2>
-
-            <!-- Education -->
-            <div class="mb-12 bg-gradient-to-r from-indigo-50 to-purple-50 border border-indigo-100 rounded-xl p-6 animate-fadeIn">
-                <div class="flex flex-wrap justify-between items-start">
-                    <div class="flex items-center gap-4">
-                        <div class="bg-indigo-100 p-3 rounded-lg">
-                            <i class="fas fa-graduation-cap text-indigo-600 text-xl"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold text-gray-800">B.Sc. Computer Science</h3>
-                            <p class="text-indigo-600 font-medium">University of Saskatchewan</p>
-                            <p class="text-gray-500 text-sm mt-1">Saskatoon, SK, Canada · 4th Year</p>
-                        </div>
-                    </div>
-                    <span class="text-sm text-gray-500 bg-white px-3 py-1 rounded-full border border-indigo-100 mt-2 sm:mt-0">Expected May 2027</span>
-                </div>
-            </div>
-
-            <div class="relative timeline pl-8">
-                <!-- CalenDue -->
-                <div class="mb-12 animate-fadeIn">
-                    <div class="absolute left-0 w-4 h-4 bg-green-600 rounded-full -ml-2 mt-1.5"></div>
-                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
-                        <div class="flex flex-wrap justify-between items-start mb-2">
-                            <div>
-                                <h3 class="text-xl font-bold text-gray-800">Co-Founder & Lead Developer</h3>
-                                <p class="text-green-600 font-medium">CalenDue</p>
-                            </div>
-                            <span class="text-sm text-gray-500 bg-white px-3 py-1 rounded-full">Sep 2025 – Present</span>
-                        </div>
-                        <p class="text-gray-600 mb-4">Saskatoon, SK · On-site</p>
-                        <ul class="space-y-2 text-gray-600">
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
-                                <span>Built AI-powered academic calendar automation platform serving 30+ students, reducing semester planning time by 95% (4 hours → 5 minutes) using Next.js, React, TypeScript, PostgreSQL, and OpenAI/Anthropic APIs</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
-                                <span>Architected and shipped 4 major integrations end-to-end: Apple Calendar (CalDAV protocol), Callie RAG chatbot (LangChain + Anthropic Claude), Canvas LMS sync, and admin feedback system with automated email notifications (Resend API)</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
-                                <span>Lead UI/UX development including UnifiedCalendars component architecture, quick-edit event modals, smart bulk operations, and 12+ critical bug fixes improving responsive design, timezone handling, and cross-platform color-coding consistency</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
-                                <span>Established production monitoring and admin tooling with email-based access control, critical feedback alerts (1-2 star reviews), and automated notifications system supporting multi-recipient distribution for team collaboration</span>
-                            </li>
-                        </ul>
-                        <div class="flex flex-wrap gap-2 mt-4">
-                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-medium">Next.js</span>
-                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-medium">React</span>
-                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-medium">TypeScript</span>
-                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-medium">PostgreSQL</span>
-                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-medium">LangChain</span>
-                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-medium">Claude API</span>
-                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-medium">RAG</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- GRANTED Internship -->
-                <div class="mb-12 animate-fadeIn">
-                    <div class="absolute left-0 w-4 h-4 bg-indigo-600 rounded-full -ml-2 mt-1.5"></div>
-                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
-                        <div class="flex flex-wrap justify-between items-start mb-2">
-                            <div>
-                                <h3 class="text-xl font-bold text-gray-800">Software Engineering Intern</h3>
-                                <p class="text-indigo-600 font-medium">GRANTED</p>
-                            </div>
-                            <span class="text-sm text-gray-500 bg-white px-3 py-1 rounded-full">June – August 2025</span>
-                        </div>
-                        <p class="text-gray-600 mb-4">Saskatoon, SK</p>
-                        <ul class="space-y-2 text-gray-600">
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
-                                <span>Built production-ready AI-integrated blogging platform with Next.js, React, PostgreSQL, and Prisma ORM</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
-                                <span>Reduced editorial workflow time by 40% through intuitive UI/UX design and streamlined admin interface</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
-                                <span>Decreased failed user verifications by 30% via robust NextAuth/Prisma authentication system</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
-                                <span>Collaborated using Agile methodologies, Docker containerization, and Git version control</span>
-                            </li>
-                        </ul>
-                        <div class="flex flex-wrap gap-2 mt-4">
-                            <span class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-xs font-medium">Next.js</span>
-                            <span class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-xs font-medium">React</span>
-                            <span class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-xs font-medium">PostgreSQL</span>
-                            <span class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-xs font-medium">Prisma</span>
-                            <span class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-xs font-medium">Docker</span>
-                            <span class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-xs font-medium">Agile</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- University of Oklahoma -->
-                <div class="mb-12 animate-fadeIn delay-100">
-                    <div class="absolute left-0 w-4 h-4 bg-purple-600 rounded-full -ml-2 mt-1.5"></div>
-                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
-                        <div class="flex flex-wrap justify-between items-start mb-2">
-                            <div>
-                                <h3 class="text-xl font-bold text-gray-800">Database Project Coordinator</h3>
-                                <p class="text-purple-600 font-medium">The University of Oklahoma</p>
-                            </div>
-                            <span class="text-sm text-gray-500 bg-white px-3 py-1 rounded-full">Sept 2023 – May 2024</span>
-                        </div>
-                        <p class="text-gray-600 mb-4">Norman, Oklahoma, USA</p>
-                        <ul class="space-y-2 text-gray-600">
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
-                                <span>Optimized engagement for 5,000+ volunteers across 200+ jobsites using Excel, MySQL, and Google Looker Studio</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
-                                <span>Reduced registration processing time by 25% through streamlined volunteer tracking and automated data workflows</span>
-                            </li>
-                        </ul>
-                        <div class="flex flex-wrap gap-2 mt-4">
-                            <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-xs font-medium">MySQL</span>
-                            <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-xs font-medium">Excel</span>
-                            <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-xs font-medium">Google Looker</span>
-                            <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-xs font-medium">Data Management</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <li class="project" id="bettertransit" data-strongest="6" data-learned="3" data-proud="6" data-built="13">
+      <div class="strip" tabindex="0" aria-label="BetterTransit screenshots">
+        <img src="website_images/work/transit-pinned.webp" width="352" height="760" alt="Pinned stops and routes with live countdowns for Saskatoon buses" loading="lazy">
+        <img src="website_images/work/transit-map.webp" width="352" height="760" alt="Live map of every Saskatoon Transit bus by route and direction" loading="lazy">
+      </div>
+      <div class="caption"><h3>BetterTransit</h3><span class="kind">Live Saskatoon transit</span><span class="year">2026</span></div>
+      <div class="body">
+        <div class="lede">
+          <p class="why" data-why-strongest="I use it every day instead of the official app." data-why-learned="Real-time data and a trip planner from scratch: GTFS, transfers, live delays, push." data-why-proud="It tells me when to leave for the bus, which is the whole point." data-why-built="First commit 15 October 2026.">I use it every day instead of the official app.</p>
+          <p>A transit app for Saskatoon that reads the city's official schedule and live bus feeds directly. Pin a stop or route and see live countdowns, plan a trip with transfers, or watch every bus move on the map.</p>
         </div>
-    </section>
+        <ul class="points">
+          <li>Earliest-arrival trip planner with transfers, live delays and cancellations applied.</li>
+          <li>Push alerts: "leave in 4 min" for saved commutes, and "your stop is next" on the bus.</li>
+          <li>Plain Node server and an installable web app; no framework.</li>
+        </ul>
+        <p class="stack">Node.js · GTFS-realtime · Web Push · Leaflet</p>
+      </div>
+    </li>
 
-    <!-- Skills Section -->
-    <section id="skills" class="py-20 bg-gray-50">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center mb-4 relative">
-                <span class="relative inline-block">
-                    Skills & Technologies
-                    <span class="absolute bottom-0 left-0 w-full h-1 bg-indigo-500"></span>
-                </span>
-            </h2>
-            <p class="text-center text-gray-600 mb-12">My technical toolkit for building modern applications</p>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Languages -->
-                <div class="bg-white p-6 rounded-xl shadow-md animate-fadeIn">
-                    <div class="flex items-center mb-4">
-                        <div class="bg-indigo-100 p-3 rounded-lg mr-4">
-                            <i class="fas fa-code text-indigo-600 text-xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold">Languages</h3>
-                    </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="skill-pill bg-gray-100 px-3 py-2 rounded-lg text-sm">Python</span>
-                        <span class="skill-pill bg-gray-100 px-3 py-2 rounded-lg text-sm">JavaScript</span>
-                        <span class="skill-pill bg-gray-100 px-3 py-2 rounded-lg text-sm">TypeScript</span>
-                        <span class="skill-pill bg-gray-100 px-3 py-2 rounded-lg text-sm">Java</span>
-                        <span class="skill-pill bg-gray-100 px-3 py-2 rounded-lg text-sm">C/C++</span>
-                        <span class="skill-pill bg-gray-100 px-3 py-2 rounded-lg text-sm">C#</span>
-                        <span class="skill-pill bg-gray-100 px-3 py-2 rounded-lg text-sm">SQL</span>
-                        <span class="skill-pill bg-gray-100 px-3 py-2 rounded-lg text-sm">HTML/CSS</span>
-                    </div>
-                </div>
-
-                <!-- Frontend -->
-                <div class="bg-white p-6 rounded-xl shadow-md animate-fadeIn delay-100">
-                    <div class="flex items-center mb-4">
-                        <div class="bg-blue-100 p-3 rounded-lg mr-4">
-                            <i class="fas fa-palette text-blue-600 text-xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold">Frontend</h3>
-                    </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="skill-pill bg-gray-100 px-3 py-2 rounded-lg text-sm">React</span>
-                        <span class="skill-pill bg-gray-100 px-3 py-2 rounded-lg text-sm">Next.js</span>
-                        <span class="skill-pill bg-gray-100 px-3 py-2 rounded-lg text-sm">Tailwind CSS</span>
-                        <span class="skill-pill bg-gray-100 px-3 py-2 rounded-lg text-sm">Bootstrap</span>
-                        <span class="skill-pill bg-gray-100 px-3 py-2 rounded-lg text-sm">Responsive Design</span>
-                        <span class="skill-pill bg-gray-100 px-3 py-2 rounded-lg text-sm">UI/UX</span>
-                    </div>
-                </div>
-
-                <!-- Backend & Databases -->
-                <div class="bg-white p-6 rounded-xl shadow-md animate-fadeIn delay-200">
-                    <div class="flex items-center mb-4">
-                        <div class="bg-green-100 p-3 rounded-lg mr-4">
-                            <i class="fas fa-server text-green-600 text-xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold">Backend & Databases</h3>
-                    </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="skill-pill bg-gray-100 px-3 py-2 rounded-lg text-sm">Node.js</span>
-                        <span class="skill-pill bg-gray-100 px-3 py-2 rounded-lg text-sm">Flask</span>
-                        <span class="skill-pill bg-gray-100 px-3 py-2 rounded-lg text-sm">Express.js</span>
-                        <span class="skill-pill bg-gray-100 px-3 py-2 rounded-lg text-sm">PostgreSQL</span>
-                        <span class="skill-pill bg-gray-100 px-3 py-2 rounded-lg text-sm">MongoDB</span>
-                        <span class="skill-pill bg-gray-100 px-3 py-2 rounded-lg text-sm">MySQL</span>
-                        <span class="skill-pill bg-gray-100 px-3 py-2 rounded-lg text-sm">Prisma</span>
-                        <span class="skill-pill bg-gray-100 px-3 py-2 rounded-lg text-sm">REST APIs</span>
-                    </div>
-                </div>
-
-                <!-- AI/ML Tools -->
-                <div class="bg-white p-6 rounded-xl shadow-md animate-fadeIn delay-300">
-                    <div class="flex items-center mb-4">
-                        <div class="bg-purple-100 p-3 rounded-lg mr-4">
-                            <i class="fas fa-brain text-purple-600 text-xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold">AI/ML Tools</h3>
-                    </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="skill-pill bg-gray-100 px-3 py-2 rounded-lg text-sm">Claude API</span>
-                        <span class="skill-pill bg-gray-100 px-3 py-2 rounded-lg text-sm">Google Gemini</span>
-                        <span class="skill-pill bg-gray-100 px-3 py-2 rounded-lg text-sm">LangChain</span>
-                        <span class="skill-pill bg-gray-100 px-3 py-2 rounded-lg text-sm">RAG</span>
-                        <span class="skill-pill bg-gray-100 px-3 py-2 rounded-lg text-sm">Prompt Engineering</span>
-                    </div>
-                </div>
-
-                <!-- Tools & DevOps -->
-                <div class="bg-white p-6 rounded-xl shadow-md animate-fadeIn delay-400">
-                    <div class="flex items-center mb-4">
-                        <div class="bg-orange-100 p-3 rounded-lg mr-4">
-                            <i class="fas fa-tools text-orange-600 text-xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold">Tools & DevOps</h3>
-                    </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="skill-pill bg-gray-100 px-3 py-2 rounded-lg text-sm">Git</span>
-                        <span class="skill-pill bg-gray-100 px-3 py-2 rounded-lg text-sm">Docker</span>
-                        <span class="skill-pill bg-gray-100 px-3 py-2 rounded-lg text-sm">GitHub</span>
-                        <span class="skill-pill bg-gray-100 px-3 py-2 rounded-lg text-sm">VS Code</span>
-                        <span class="skill-pill bg-gray-100 px-3 py-2 rounded-lg text-sm">Vercel</span>
-                        <span class="skill-pill bg-gray-100 px-3 py-2 rounded-lg text-sm">Render</span>
-                    </div>
-                </div>
-
-            </div>
+    <li class="project" id="studibudi" data-strongest="7" data-learned="7" data-proud="7" data-built="11">
+      <div class="strip" tabindex="0" aria-label="Studi-Budi screenshots and diagrams">
+        <img class="w" src="website_images/work/studibudi-home.webp" width="1200" height="750" alt="Studi-Budi landing page: Classmates, not strangers" loading="lazy">
+        <img class="w" src="website_images/work/studibudi-components.webp" width="1200" height="854" alt="Component diagram of Studi-Budi's three tiers" loading="lazy">
+        <img class="w" src="website_images/work/studibudi-activity.webp" width="1137" height="760" alt="Activity diagram for searching and joining a study group" loading="lazy">
+      </div>
+      <div class="caption"><h3>Studi-Budi</h3><span class="kind">Study-group matching</span><span class="year">2026</span></div>
+      <div class="body">
+        <div class="lede">
+          <p class="why" data-why-strongest="The most complete design work I have done: every decision written down first." data-why-learned="Software engineering as a team: personas, stories, acceptance tests, story points." data-why-proud="A whole team agreeing on a design, and the diagrams to show it." data-why-built="CMPT 370, from September 2026.">The most complete design work I have done: every decision written down first.</p>
+          <p>A CMPT 370 team project that matches University of Saskatchewan students into study groups of two to eight inside their own classes. Alumni answer questions through tickets without sharing their email.</p>
         </div>
-    </section>
+        <ul class="points">
+          <li>Personas, user stories, acceptance tests and a prioritized, story-pointed backlog.</li>
+          <li>Use-case, activity, sequence, class and component diagrams.</li>
+          <li>Next.js and Supabase, built by the team on GitLab.</li>
+        </ul>
+        <p class="stack">Next.js · TypeScript · Supabase · PlantUML</p>
+      </div>
+    </li>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-white">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center mb-4 relative">
-                <span class="relative inline-block">
-                    Get In Touch
-                    <span class="absolute bottom-0 left-0 w-full h-1 bg-indigo-500"></span>
-                </span>
-            </h2>
-            <p class="text-center text-gray-600 mb-12">Open to 2026 summer internship opportunities! Let's connect.</p>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="animate-fadeIn">
-                    <form id="contact-form" class="space-y-6">
-                        <div>
-                            <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Name</label>
-                            <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
-                        </div>
-                        <div>
-                            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
-                            <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
-                        </div>
-                        <div>
-                            <label for="subject" class="block text-sm font-medium text-gray-700 mb-2">Subject</label>
-                            <input type="text" id="subject" name="subject" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
-                        </div>
-                        <div>
-                            <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message</label>
-                            <textarea id="message" name="message" rows="4" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"></textarea>
-                        </div>
-                        <button type="submit" class="w-full bg-indigo-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-indigo-700 transition">
-                            Send Message
-                        </button>
-                    </form>
-                </div>
-                
-                <div class="animate-fadeIn delay-200">
-                    <div class="bg-gray-50 p-8 rounded-xl shadow-sm h-full">
-                        <h3 class="text-xl font-semibold mb-6">Contact Information</h3>
-                        <div class="space-y-6">
-                            <div class="flex items-start">
-                                <div class="bg-indigo-100 p-3 rounded-full mr-4">
-                                    <i class="fas fa-envelope text-indigo-600"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-medium text-gray-700">Email</h4>
-                                    <a href="mailto:ayotundeogunade13@gmail.com" class="text-gray-600 hover:text-indigo-600">ayotundeogunade13@gmail.com</a>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <div class="bg-indigo-100 p-3 rounded-full mr-4">
-                                    <i class="fas fa-map-marker-alt text-indigo-600"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-medium text-gray-700">Location</h4>
-                                    <p class="text-gray-600">Saskatoon, SK, Canada</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="mt-10">
-                            <h4 class="font-medium text-gray-700 mb-4">Connect With Me</h4>
-                            <div class="flex space-x-4">
-                                <a href="https://github.com/ayoogunade?tab=repositories" target="_blank" class="bg-white p-3 rounded-full text-gray-700 hover:bg-indigo-100 hover:text-indigo-600 transition">
-                                    <i class="fab fa-github text-xl"></i>
-                                </a>
-                                <a href="https://www.linkedin.com/in/ayoogunade/" target="_blank" class="bg-white p-3 rounded-full text-gray-700 hover:bg-indigo-100 hover:text-indigo-600 transition">
-                                    <i class="fab fa-linkedin-in text-xl"></i>
-                                </a>
-                                <a href="https://www.instagram.com/ayotalksmusic/" target="_blank" class="bg-white p-3 rounded-full text-gray-700 hover:bg-indigo-100 hover:text-indigo-600 transition">
-                                    <i class="fab fa-instagram text-xl"></i>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="mt-8 p-4 bg-indigo-50 rounded-lg border border-indigo-100">
-                            <p class="text-sm text-indigo-800 font-medium">
-                                <i class="fas fa-briefcase mr-2"></i>
-                                Open to 2026 Summer Internship Opportunities
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <li class="project small" id="csss" data-strongest="8" data-learned="11" data-proud="9" data-built="7">
+      <div class="strip" tabindex="0" aria-label="CSSS Email Sender">
+        <div class="card-frame"><span>CSSS Mailer</span><span>17 emails in one run</span></div>
+      </div>
+      <div class="caption"><h3>CSSS Email Sender</h3><span class="kind">Python automation</span><span class="year">2025</span></div>
+      <div class="body">
+        <div class="lede">
+          <p class="why" data-why-strongest="Event emails to every CS professor went from 51 minutes to 4." data-why-learned="Driving Outlook from code on two operating systems, with no stored passwords." data-why-proud="I wrote it for my own role, then documented it so the next event director can run it." data-why-built="October 2025.">Event emails to every CS professor went from 51 minutes to 4.</p>
+          <p>As the Computer Science Student Society's event director, I wrote a tool that sends each professor a personal email with the event poster attached, through Outlook on Mac or Windows, with test and draft modes to check before anything goes out.</p>
         </div>
-    </section>
+        <p class="stack">Python · pandas · AppleScript · Windows COM</p>
+        <p class="links"><a href="https://github.com/ayoogunade/CSSS_Email_Sender">GitHub</a></p>
+      </div>
+    </li>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-12">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-6 md:mb-0">
-                    <span class="text-xl font-bold">Ayo Ogunade</span>
-                    <p class="text-gray-400 mt-2">Full Stack Developer & AI Enthusiast</p>
-                    <p class="text-gray-400">© 2026 All rights reserved.</p>
-                </div>
-                <div class="flex space-x-6">
-                    <a href="#home" class="text-gray-400 hover:text-white transition">Home</a>
-                    <a href="#about" class="text-gray-400 hover:text-white transition">About</a>
-                    <a href="#projects" class="text-gray-400 hover:text-white transition">Projects</a>
-                    <a href="#experience" class="text-gray-400 hover:text-white transition">Experience</a>
-                    <a href="#skills" class="text-gray-400 hover:text-white transition">Skills</a>
-                    <a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a>
-                </div>
-            </div>
+    <li class="project small" id="granted" data-strongest="9" data-learned="5" data-proud="8" data-built="4">
+      <div class="strip" tabindex="0" aria-label="GRANTED screenshot">
+        <img class="w" src="website_images/work/granted.webp" width="1200" height="639" alt="GRANTED's website, the grant platform where I interned" loading="lazy">
+      </div>
+      <div class="caption"><h3>AI blogging platform</h3><span class="kind">Internship at GRANTED</span><span class="year">2025</span></div>
+      <div class="body">
+        <div class="lede">
+          <p class="why" data-why-strongest="Production code at a company, used by its editors." data-why-learned="My first team codebase: reviews, Docker, Agile, someone else's conventions." data-why-proud="Editors finished their work 40% faster." data-why-built="Summer 2025.">Production code at a company, used by its editors.</p>
+          <p>An AI-assisted blogging platform for GRANTED's content team. It cut editorial workflow time by 40% and failed sign-in verifications by 30%.</p>
         </div>
-    </footer>
+        <p class="stack">Next.js · PostgreSQL · Prisma · NextAuth · Docker</p>
+        <p class="links"><a href="https://www.granted.tech">granted.tech</a></p>
+      </div>
+    </li>
 
-    <script>
-        // Mobile menu toggle
-        document.getElementById('menu-toggle').addEventListener('click', function() {
-            document.getElementById('mobile-menu').classList.toggle('hidden');
-        });
+    <li class="project small" id="resumai" data-strongest="10" data-learned="12" data-proud="11" data-built="5">
+      <div class="strip" tabindex="0" aria-label="ResumA.I screenshot">
+        <img class="w" src="website_images/work/resumai.webp" width="1200" height="648" alt="ResumA.I's upload page" loading="lazy">
+      </div>
+      <div class="caption"><h3>ResumA.I</h3><span class="kind">Resume tailoring with Gemini</span><span class="year">2025</span></div>
+      <div class="body">
+        <div class="lede">
+          <p class="why" data-why-strongest="Cut manual resume editing by about 65%." data-why-learned="Prompt engineering, and how much an AI answer depends on the question." data-why-proud="I still use the idea behind it for every application." data-why-built="August 2025.">Cut manual resume editing by about 65%.</p>
+          <p>Upload a resume and a job posting; Google Gemini suggests the changes that fit that job.</p>
+        </div>
+        <p class="stack">Next.js · Google Gemini · MongoDB</p>
+        <p class="links"><a href="https://github.com/ayoogunade/ResumA.I">GitHub</a></p>
+      </div>
+    </li>
 
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-                // Close mobile menu if open
-                document.getElementById('mobile-menu').classList.add('hidden');
-            });
-        });
+    <li class="project small" id="ayotalksmusic" data-strongest="11" data-learned="13" data-proud="10" data-built="1">
+      <div class="strip" tabindex="0" aria-label="AyoTalksMusic screenshot">
+        <img class="w" src="website_images/work/ayotalksmusic.webp" width="1200" height="648" alt="AyoTalksMusic: 327 albums reviewed" loading="lazy">
+      </div>
+      <div class="caption"><h3>AyoTalksMusic</h3><span class="kind">My album reviews</span><span class="year">2024</span></div>
+      <div class="body">
+        <div class="lede">
+          <p class="why" data-why-strongest="327 albums reviewed, and the site that holds them." data-why-learned="Where I learned HTML, CSS and JavaScript by needing them." data-why-proud="327 albums and counting." data-why-built="My first site.">327 albums reviewed, and the site that holds them.</p>
+          <p>A searchable home for my album reviews, with an album of the day and a random pick.</p>
+        </div>
+        <p class="stack">HTML · CSS · JavaScript</p>
+        <p class="links"><a href="https://ayotalksmusic.store/">ayotalksmusic.store</a></p>
+      </div>
+    </li>
 
-        // Project filtering
-        document.querySelectorAll('.filter-btn').forEach(button => {
-            button.addEventListener('click', function() {
-                // Update active button styling
-                document.querySelectorAll('.filter-btn').forEach(btn => {
-                    btn.classList.remove('filter-active');
-                });
-                this.classList.add('filter-active');
-                
-                const filter = this.getAttribute('data-filter');
-                const projects = document.querySelectorAll('.project-card');
-                
-                projects.forEach(project => {
-                    const categories = project.getAttribute('data-category');
-                    if (filter === 'all' || (categories && categories.includes(filter))) {
-                        project.style.display = 'block';
-                    } else {
-                        project.style.display = 'none';
-                    }
-                });
-            });
-        });
+    <li class="project small" id="ayozon" data-strongest="12" data-learned="9" data-proud="12" data-built="3">
+      <div class="strip" tabindex="0" aria-label="AyoZon">
+        <div class="card-frame"><span>AyoZon</span><span>Flask services behind a Next.js store</span></div>
+      </div>
+      <div class="caption"><h3>AyoZon</h3><span class="kind">E-commerce, microservices</span><span class="year">2025</span></div>
+      <div class="body">
+        <div class="lede">
+          <p class="why" data-why-strongest="An online store used by over 1,000 people." data-why-learned="Splitting a backend into services, and REST APIs that other code depends on." data-why-proud="Over 1,000 people used it." data-why-built="2025.">An online store used by over 1,000 people.</p>
+          <p>An online store with a Next.js front end and Python Flask microservices behind a REST API, using both SQL and NoSQL storage.</p>
+        </div>
+        <p class="stack">Next.js · Python · Flask · MongoDB</p>
+        <p class="links"><a href="https://github.com/ayoogunade/AyoZon">GitHub</a></p>
+      </div>
+    </li>
 
-        // Form submission via FormSubmit.co
-        document.getElementById('contact-form').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            const form = this;
-            const submitBtn = form.querySelector('button[type="submit"]');
-            const originalText = submitBtn.textContent;
+    <li class="project small" id="collab" data-strongest="13" data-learned="10" data-proud="13" data-built="2">
+      <div class="strip" tabindex="0" aria-label="Collab Text Editor">
+        <div class="card-frame"><span>Collab Editor</span><span>Several cursors, one document</span></div>
+      </div>
+      <div class="caption"><h3>Collab Text Editor</h3><span class="kind">Real-time editing</span><span class="year">2024</span></div>
+      <div class="body">
+        <div class="lede">
+          <p class="why" data-why-strongest="Several people editing one document, live." data-why-learned="WebSockets, and keeping several clients in agreement." data-why-proud="The first time two of my screens talked to each other." data-why-built="2024.">Several people editing one document, live.</p>
+          <p>A collaborative text editor where several people edit the same document and see each other's changes as they type.</p>
+        </div>
+        <p class="stack">React · WebSocket · Render</p>
+        <p class="links"><a href="https://github.com/ayoogunade/CollabTextEditor">GitHub</a></p>
+      </div>
+    </li>
 
-            submitBtn.textContent = 'Sending...';
-            submitBtn.disabled = true;
+  </ol>
+</section>
 
-            try {
-                const response = await fetch('https://formsubmit.co/ajax/ayotundeogunade13@gmail.com', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-                    body: JSON.stringify({
-                        name: form.name.value,
-                        email: form.email.value,
-                        subject: form.subject.value,
-                        message: form.message.value,
-                        _subject: 'New Portfolio Contact: ' + form.subject.value,
-                    })
-                });
+<!-- About: the biography, with the portrait large beside it -->
+<section class="about" id="about" aria-labelledby="about-title">
+  <dl class="facts">
+    <div><dt>Based in</dt><dd>Saskatoon, Canada</dd></div>
+    <div><dt>Studying</dt><dd>B.Sc. Honours Computer Science, USask, expected 2029</dd></div>
+    <div><dt>Looking for</dt><dd>Summer 2027 internships</dd></div>
+  </dl>
+  <div class="about-text">
+    <h2 id="about-title" class="section-title">About</h2>
+    <p class="statement">I am <strong>Ayo Ogunade</strong>, a third-year computer science student in Saskatoon who builds full-stack apps with AI where it helps. Most start with someone I know who needs one: classmates with fifty deadlines, ushers at my church, farmers selling produce in Nigeria.</p>
+    <p class="statement soft">I am active in the <a href="https://nsbe.org">National Society of Black Engineers</a>, Sankofatech's Achievers in Technology program and the Uniting the Prairies tech conference. Away from a keyboard I am gaming, reviewing albums or watching something.</p>
+  </div>
+  <figure class="about-photo"><img src="website_images/work/ayo-portrait.webp" width="600" height="856" alt="Ayo Ogunade in a navy suit, sitting on a stool against a teal wall" loading="lazy"></figure>
+</section>
 
-                if (response.ok) {
-                    form.innerHTML = `
-                        <div class="text-center py-12">
-                            <div class="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-4">
-                                <i class="fas fa-check text-green-600 text-2xl"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-gray-800 mb-2">Message Sent!</h3>
-                            <p class="text-gray-600">Thanks for reaching out — I'll get back to you soon.</p>
-                        </div>`;
-                } else {
-                    throw new Error('Failed');
-                }
-            } catch {
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-                submitBtn.insertAdjacentHTML('afterend', '<p class="text-red-500 text-sm mt-2">Something went wrong. Please email me directly at ayotundeogunade13@gmail.com</p>');
-            }
-        });
+<!-- Experience and toolkit: two narrow lists side by side -->
+<section class="lists" id="experience" aria-label="Experience and toolkit">
+  <div class="list">
+    <h2 class="section-title">Experience</h2>
+    <ul class="rows">
+      <li><span class="dot" style="--c:var(--accent)"></span><span class="name">Co-founder and CEO, CalenDue<small>Leading a team of four; calendar sync, the Callie assistant and both mobile apps.</small></span><span class="val">2025–now</span></li>
+      <li><span class="dot" style="--c:#14a38b"></span><span class="name">Software engineering intern, GRANTED<small>AI blogging platform; 40% faster editorial workflow.</small></span><span class="val">Summer 2025</span></li>
+      <li><span class="dot" style="--c:#841617"></span><span class="name">Database project coordinator, University of Oklahoma<small>5,000+ volunteers across 200+ sites; registration 25% faster.</small></span><span class="val">2023–24</span></li>
+    </ul>
+    <p class="group">Education</p>
+    <ul class="rows">
+      <li><span class="dot" style="--c:#0f6b3a"></span><span class="name">B.Sc. Honours Computer Science, University of Saskatchewan</span><span class="val">Expected 2029</span></li>
+    </ul>
+    <p class="group">Community</p>
+    <ul class="rows">
+      <li><img class="logo" src="website_images/NSBE.png" alt="" width="16" height="16"><span class="name">National Society of Black Engineers</span><span class="val">Member</span></li>
+      <li><img class="logo" src="website_images/AIT.png" alt="" width="16" height="16"><span class="name">Sankofatech Achievers in Technology</span><span class="val">Program</span></li>
+      <li><img class="logo" src="website_images/Uniting_The_Prairies.png" alt="" width="16" height="16"><span class="name">Uniting the Prairies Tech</span><span class="val">Conference</span></li>
+      <li><span class="dot"></span><span class="name">Computer Science Student Society</span><span class="val">Event Director</span></li>
+    </ul>
+  </div>
+  <div class="list">
+    <h2 class="section-title">Toolkit</h2>
+    <p class="group first">Languages</p>
+    <ul class="rows">
+      <li><span class="dot"></span><span class="name">TypeScript, JavaScript</span><span class="val">Daily</span></li>
+      <li><span class="dot"></span><span class="name">Python, SQL</span><span class="val">Often</span></li>
+      <li><span class="dot"></span><span class="name">C, C++, Java, C#</span><span class="val">Coursework</span></li>
+    </ul>
+    <p class="group">Building</p>
+    <ul class="rows">
+      <li><span class="dot"></span><span class="name">Next.js, React, Tailwind</span><span class="val">Web</span></li>
+      <li><span class="dot"></span><span class="name">Expo, React Native, Capacitor</span><span class="val">Mobile</span></li>
+      <li><span class="dot"></span><span class="name">Node.js, Flask, Express</span><span class="val">Servers</span></li>
+      <li><span class="dot"></span><span class="name">PostgreSQL, Prisma, Supabase, MongoDB</span><span class="val">Data</span></li>
+      <li><span class="dot"></span><span class="name">Claude API, Claude Code, Gemini, LangChain, RAG</span><span class="val">AI</span></li>
+      <li><span class="dot"></span><span class="name">Git, Docker, Vercel, EAS, Clerk</span><span class="val">Shipping</span></li>
+    </ul>
+  </div>
+</section>
 
-        // Scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+<!-- Contact: one sentence, then the form -->
+<section class="contact" id="contact" aria-labelledby="contact-title">
+  <div class="contact-say">
+    <h2 id="contact-title" class="section-title">Contact</h2>
+    <p class="statement">Hiring for summer 2027, building something for your people, or just curious how one of these works? Write to me.</p>
+    <p class="contact-direct"><a href="mailto:ayotundeogunade13@gmail.com">ayotundeogunade13@gmail.com</a><a href="https://www.linkedin.com/in/ayoogunade/">LinkedIn</a></p>
+    <p class="soft small">Saskatoon, Central Standard Time all year. I usually reply within a day.</p>
+  </div>
+  <form class="form" id="contact-form" action="https://formsubmit.co/ayotundeogunade13@gmail.com" method="POST">
+    <input type="hidden" name="_subject" value="Portfolio message">
+    <input type="text" name="_honey" class="honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <label>Your name<input name="name" autocomplete="name" required></label>
+    <label>Email<input name="email" type="email" autocomplete="email" required></label>
+    <label class="wide">Message<textarea name="message" rows="5" required></textarea></label>
+    <button class="btn" type="submit">Send message</button>
+    <p class="form-status" role="status" aria-live="polite"></p>
+  </form>
+</section>
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
+</main>
 
-        // Observe all animated elements
-        document.querySelectorAll('.animate-fadeIn').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            observer.observe(el);
-        });
-    </script>
+<!-- Footer: the last rows of the board -->
+<footer class="footer">
+  <div class="tile t-state">
+    <p>Thirteen projects so far. The next one is probably for someone I know.</p>
+    <p class="small">© 2026 Ayo Ogunade</p>
+  </div>
+  <nav class="tile t-nav" aria-label="Footer">
+    <a href="#work">Work</a><a href="#about">About</a><a href="#experience">Experience</a><a href="#contact">Contact</a><a href="SWE_%20Harris.pdf">Resume</a>
+  </nav>
+  <div class="tile t-time">
+    <p>Saskatoon</p>
+    <p class="clock" id="clock">Central Standard Time</p>
+  </div>
+  <div class="tile t-mail">
+    <a href="https://github.com/ayoogunade">GitHub</a>
+    <a class="mail" href="mailto:ayotundeogunade13@gmail.com">ayotundeogunade13@gmail.com</a>
+  </div>
+  <div class="tile t-mark"><p aria-hidden="true">Ayo Ogunade</p></div>
+  <a class="tile t-go" href="mailto:ayotundeogunade13@gmail.com">
+    <span>Say hello</span>
+    <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+  </a>
+</footer>
+
+<script src="main.js" defer></script>
 </body>
 </html>
